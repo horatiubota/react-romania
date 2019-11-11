@@ -1,22 +1,25 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import styles from './styles.css'
+import BaseMap from './components/BaseMap'
 
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
+// geoData
+import romania from './data/romania.geo.js'
 
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
+function MapOfRomania(props) {   
+    return <BaseMap geoData={romania} {...props}/>;
 }
+
+MapOfRomania.propTypes = {
+    colorFunction: PropTypes.func,
+};
+
+MapOfRomania.defaultProps = { 
+    // size defaults
+    minHeight: 300,
+    // function defaults
+    colorFunction: () => { return "hsl(" + Math.random() * 360 + ", 100%, 50%)"; } 
+};
+
+export default MapOfRomania;
+export { MapOfRomania };
