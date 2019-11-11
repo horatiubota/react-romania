@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { geoMercator, geoPath } from 'd3-geo'
+import withSize from 'react-sizeme'
 
-export default function BaseMap(props) {
-
-  const size = {height: 300, width: 500};
-        
-  let width = Math.max(props.minWidth !== undefined ? props.minWidth : 0, size.width);
-  let height = Math.max(props.minHeight !== undefined ? props.minHeight : 0, size.height);
+function BaseMap(props) {
+  
+  let width = Math.max(props.minWidth !== undefined ? props.minWidth : 0, props.size.width);
+  let height = Math.max(props.minHeight !== undefined ? props.minHeight : 0, props.size.height);
 
   const projector = geoPath().projection(geoMercator()
     .fitSize([width, height], props.geoData));
@@ -16,7 +15,8 @@ export default function BaseMap(props) {
     geoItem => Object.assign(geoItem.properties, props.mapData
       .find(mapItem => geoItem.properties.id === mapItem.id)))
 
-    return (
+  return (
+    <div>
       <svg width={width} height={height} style={{background: 'yellow'}}>
         <g>
           {
@@ -45,5 +45,8 @@ export default function BaseMap(props) {
           }
         </g>
       </svg>
-    );
+    </div>
+  );
 }
+
+export default withSize()(BaseMap)
