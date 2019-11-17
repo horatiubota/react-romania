@@ -1,26 +1,44 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import ReactDOMServer from 'react-dom/server';
 import classnames from 'classnames'
+import { idnames, d3classnames } from '../utils/idnames'
+
+import PathLayer from './layers/PathLayer'
+import LabelLayer from './layers/LabelLayer'
+import PointLayer from './layers/PointLayer'
+import TooltipLayer from './layers/TooltipLayer'
 
 import { geoMercator, geoPath } from 'd3-geo'
 import { select, selectAll, mouse } from 'd3'
 
 import withSize from 'react-sizeme'
 
-const updateTooltip = (d, node, tooltip) => {
+import {keyBy, merge, mergeWith, values, isEqual} from 'lodash-es'
+
+// const attachTooltip = () => {
+
+// }
+
+const updateTooltip = (mapId, d, node, tooltip) => {
   const position = mouse(node);
-  select('foreignObject#tooltip')
+  select('#' + idnames(mapId, 'tooltipObject'))
   .attr('x', position[0] + 10)
   .attr('y', position[1] + 10)
-  .select('div.tooltip')
+  select('#' + idnames(mapId, 'tooltipDiv'))
   .html(typeof(tooltip) === 'function' ? 
     ReactDOMServer.renderToString(tooltip(d.properties)) : '')
 }
 
-const removeTooltip = () => {
-  select('foreignObject#tooltip')
-  .select('div.tooltip')
-  .html('')
+const removeTooltip = (mapId) => {
+  select('#' + idnames(mapId, 'tooltipDiv')).html('')
+}
+
+const join = (leftArray, rightArray, leftOn, rightOn) => {
+  let leftKeyBy = keyBy(leftArray, item => leftOn(item))
+  let rightKeyBy = keyBy(rightArray, item => rightOn(item))
+  Object.keys(rightKeyBy).forEach(e => rightKeyBy[e] = {properties: rightKeyBy[e]});
+  
+  return values(merge(leftKeyBy, rightKeyBy));
 }
 
 function BaseMap(props) {
@@ -29,66 +47,60 @@ function BaseMap(props) {
   let height = Math.max(props.minHeight !== undefined ? props.minHeight : 0, props.size.height);
 
   const projector = geoPath().projection(geoMercator()
-    .fitSize([width, height], props.geoData));
+    .fitSize([width, height], props.primaryGeoData));
 
-  // assign mapData to geoItems
-  props.geoData.features.map(
-    geoItem => Object.assign(geoItem.properties, props.mapData
-      .find(mapItem => geoItem.properties.id === mapItem.id)))
+  // assign primaryMapData to primaryGeoData
+  const primaryData = (props.primaryMapData !== undefined) ? 
+    join(props.primaryGeoData.features, props.primaryMapData,
+      leftItem => leftItem.properties.id, rightItem => rightItem.id) : [];
+
+  // assign secondaryMapData to secondaryGeoData
+  const secondaryData = (props.secondaryMapData !== undefined) ?
+    join(props.secondaryGeoData.features, props.secondaryMapData,
+      leftItem => [leftItem.properties.id, leftItem.properties.countyId],
+      rightItem => [rightItem.id, rightItem.countyId]) : [];
+  
+  // filter points
+  const pointData = (props.points !== undefined) ? 
+    props.pointGeoData.features.filter(point => 
+      props.points.indexOf(point.properties.id) >= 0) : props.pointGeoData.features;
   
   useEffect(() => {
-    selectAll('.polygonGroup')
-    .data(props.geoData.features, function(d) { return d ? d.properties.id : this.id; })
-    .on('click', function(d) { updateTooltip(d, this, props.tooltip) })
-    .on('mousemove', function(d) { updateTooltip(d, this, props.tooltip) })
+    selectAll(d3classnames(props.mapId, 'polygonPathGroup'))
+    .data(primaryData, function(d) { return d ? 
+      idnames(props.mapId, d.properties.id, 'polygonPathGroup') : this.id; })
+    .on('click', function(d) { updateTooltip(props.mapId, d, this, props.tooltip) })
+    .on('mousemove', function(d) { updateTooltip(props.mapId, d, this, props.tooltip) })
 
-    select('svg').on('mouseout', removeTooltip)
+    select('svg#' + props.mapId).on('mouseout', () => removeTooltip(props.mapId))
   }, [])
 
   return (
     <div>
-      <svg className="svg" width={width} height={height} style={{background: 'yellow'}}>
-        <g className="polygons">
-          {
-            props.geoData.features.map((d,i) => (
-              <g 
-                key={i}
-                id={d.properties.id} 
-                className="polygonGroup" >    
-                <path
-                  id={d.properties.id}
-                  className={classnames(props.classes.polygon, 'polygonPath')}
-                  d={projector(d.geometry)}
-                  fill={d.properties.color || props.defaultPolygonFill}>
-                </path>
-              </g>
-            ))
-          }
-        </g>
-        { /* draw labels on top of geography */ }
-        <g>
-          { 
-            props.geoData.features.map((d,i) => (
-              <text
-                key={i}
-                x={projector.centroid(d.geometry)[0] * 0.99} 
-                y={projector.centroid(d.geometry)[1] * 1.01}>
-                <tspan className={props.classes.label}>
-                  {
-                    props.showDefaultLabels ? 
-                      d.properties.defaultLabel : d.properties.label 
-                  }
-                </tspan>
-              </text>))
-          }
-        </g>
-        { /* tooltip placeholder */ }
-        <g>
-          <foreignObject id="tooltip" width={1} height={1} 
-            style={{pointerEvents: 'none', overflow: 'visible'}}>
-            <div className="tooltip"></div>
-          </foreignObject>
-        </g> 
+      <svg id={props.mapId} width={width} height={height}>
+        {
+          (props.secondaryMapData !== undefined) ?
+            <PathLayer id={props.mapId} projector={projector} data={secondaryData} 
+              polygonClass={props.classes.secondaryPolygon}/> : null 
+        }
+        {
+          (props.primaryMapData !== undefined) ?
+          <PathLayer id={props.mapId} projector={projector} data={primaryData} 
+            polygonClass={props.classes.primaryPolygon}/> : null
+        }
+        {
+          props.showPoints ? 
+          <PointLayer id={props.mapId} projector={projector} data={pointData} 
+            classes={props.classes}/> : null
+        } 
+        {
+          props.showLabels ? 
+            <LabelLayer id={props.mapId} projector={projector} data={props.primaryGeoData.features} 
+              classes={props.classes} showDefaultLabels={props.showDefaultLabels}/> : null
+        }
+        {
+          props.showTooltip ? <TooltipLayer id={props.mapId}/> : null
+        }
       </svg>
     </div>
   );

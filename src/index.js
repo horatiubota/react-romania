@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 // geoData
 import romania from './data/romania.geo.js'
 import capitals from './data/romania.capitals.geo.js'
+import atus from './data/romania.atus.simple.geo.js'
 
 function DefaultTooltip(props) {
     return <div style={{display: 'inline-block', background: 'white'}}>
@@ -18,7 +19,11 @@ function DefaultTooltip(props) {
 }
 
 function MapOfRomania(props) {   
-    return <BaseMap geoData={romania} {...props}/>;
+    return <BaseMap 
+        primaryGeoData={romania} 
+        secondaryGeoData={atus} 
+        pointGeoData={capitals}
+        {...props}/>;
 }
 
 MapOfRomania.propTypes = {

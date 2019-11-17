@@ -10,16 +10,42 @@ const useStyles = makeStyles({
       fill: 'black',
       fontSize: 10,
       fontFamily: 'sans-serif',
-      pointerEvents: 'none'
+      pointerEvents: 'none',
+      background: 'white'
     },
-    polygon: {
+    primaryPolygon: {
         strokeWidth: 0.5,
         stroke: 'gray',
-        strokeLinejoin: 'round',
         strokeOpacity: 1,
+        strokeLinejoin: 'round',
+        fillOpacity: 1,
+        transition: 'fill 1s ease',
         '&:hover': {
-            fill: 'white',
-        }
+            stroke: 'black',
+            strokeWidth: 1,
+        },
+    },
+    secondaryPolygon: {
+        strokeWidth: 0.1,
+        stroke: 'gray',
+        strokeLinejoin: 'round',
+        fillOpacity: 1,
+        pointerEvents: 'none',
+        transition: 'fill 1s ease'
+    },
+    point: {
+        stroke: 'red',
+        strokeWidth: 5,
+        strokeLinecap: 'round',
+    },
+    pointLabel: {
+      fontSize: 12,
+      //background: 'white',
+      fontFamily: 'sans-serif',
+      pointerEvents: 'none',
+      display: 'inline-block', 
+      whiteSpace: 'nowrap',
+      padding: 2
     }
   });
 
@@ -32,39 +58,59 @@ const colorize = (data) => {
 }
 
 function Tooltip(props) {
-    return <div style={{display: 'inline-block', background: 'pink'}}>
-        <table> 
-            <tr><td>{props.id}</td>
-                <td>{props.value}</td>
-            </tr>
-        </table>
+    const style = {
+        display: 'inline-block', 
+        background: 'white', 
+        padding: '0 1em',
+        whiteSpace: 'nowrap'
+    }
+
+    return <div style={style}>
+        <h5>Județul {props.id}</h5>
+        <p>Populația în 2011: {props.value}</p>
     </div>
 }
 
 export default function App(props) {
 
-    const [mapData, setMapData] = useState([]);
-
+    const [mapData, setMapData] = useState({primaryMapData: [], secondaryMapData:[]})
+    
     useEffect(() => {
-        fetch('data/county_population_data.json')
-            .then(res => res.json())
-            .then(res => {
-                setMapData(res.map(item => Object.assign(item, 
-                    { 
-                        color: colorize(res.map(item => item.value))(item.value),
-                        showCapital: true,
-                    }
-                )))
-            });
+        const promises = [
+            'data/county_population_data.json',
+            'data/atu_population_data.json'
+        ].map(url => fetch(url).then(response => response.json()));
+        
+        Promise.all(promises).then(([countyData, atuData]) => {
+            const countyColorFunction = colorize(countyData.map(item => item.value))
+            const atuColorFunction = colorize(atuData.map(item => Math.min(item.value, 100000)))
+            
+            countyData.map(item => Object.assign(item, 
+                { color: countyColorFunction(item.value), showCapital: true }));
+            
+            atuData.map(item => Object.assign(item, 
+                { color: atuColorFunction(item.value) }))
+            
+            setMapData({primaryMapData: countyData, secondaryMapData: atuData})
+        });
+        
     }, []);
 
     return (
-    <div>
-        <MapOfRomania 
-            // showDefaultLabels
-            minHeight={500}
-            mapData={mapData}
-            classes={useStyles()}
-            tooltip={Tooltip}/>            
-    </div>);
+        <div>
+            <div>
+                <MapOfRomania 
+                    mapId={'firstMap'}
+                    // showLabels
+                    showTooltip
+                    showPoints
+                    points={['Cluj-Napoca', 'București']}
+                    minHeight={500}
+                    primaryMapData={mapData.primaryMapData}
+                    // secondaryMapData={mapData.secondaryMapData}
+                    classes={useStyles()}
+                    tooltip={Tooltip}
+                    tooltipLevel={'secondary'}/>            
+            </div>
+        </div>);
 }
