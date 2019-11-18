@@ -1,22 +1,20 @@
 import React from 'react'
 import classnames from 'classnames'
-import idnames from '../../utils/idnames'
 
 function PathLayer(props) {
 
-    return <g id={idnames(props.id, 'polygonsGroup')} 
-        className={classnames(props.id, 'polygonsGroup')}>
+    return <g id={props.layerId} className={'polygonsGroup'}>
     { 
     props.data.map((d,i) => (
         <g 
-            id={idnames(props.id, d.properties.id, 'polygonPathGroup')} 
+            id={d.properties.id} 
             key={i}
-            className={classnames(props.id, 'polygonPathGroup')}>    
+            className={'polygonPathGroup'}>    
             <path
                 d={props.projector(d.geometry)}
-                id={idnames(props.id, d.properties.id, 'polygonPath')}
-                style={{fill: d.properties.color || props.defaultPolygonFill}}
-                className={classnames(props.id, props.polygonClass, 'polygonPath')} />
+                id={d.properties.id}
+                style={{fill: props.defaultPolygonFill}}
+                className={classnames(props.polygonClass, 'polygonPath')} />
         </g> ))
     }
     </g>

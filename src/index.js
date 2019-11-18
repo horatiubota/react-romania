@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 // geoData
 import romania from './data/romania.geo.js'
-import capitals from './data/romania.capitals.geo.js'
+import cities from './data/romania.cities.geo.js'
 import atus from './data/romania.atus.simple.geo.js'
 
 function DefaultTooltip(props) {
@@ -18,11 +18,34 @@ function DefaultTooltip(props) {
     </div>
 }
 
-function MapOfRomania(props) {   
+function MapOfRomanianCounty(props) {
+    
+    const pointGeoData = props.points ?
+     cities.features.filter(city => props.points.indexOf(city.properties.id) >= 0) : 
+     props.showPoints ? 
+        cities.features.filter(city => city.properties.countyId === props.countyId) : 
+        null;
+
+    const countyGeoData = {
+        features: atus.features.filter(atu => atu.properties.countyId == props.countyId),
+        type: 'FeatureCollection'
+    }
+
+    return <BaseMap
+        primaryGeoData={countyGeoData}
+        pointGeoData={pointGeoData}
+        {...props}/>;
+}
+
+function MapOfRomania(props) {
+    
+    const pointGeoData = props.points ? cities.features.filter(city => 
+        props.points.indexOf(city.properties.id) >= 0) : cities.features;
+
     return <BaseMap 
         primaryGeoData={romania} 
         secondaryGeoData={atus} 
-        pointGeoData={capitals}
+        pointGeoData={pointGeoData}
         {...props}/>;
 }
 
@@ -47,4 +70,4 @@ MapOfRomania.defaultProps = {
 };
 
 export default MapOfRomania;
-export { MapOfRomania };
+export { MapOfRomania, MapOfRomanianCounty };

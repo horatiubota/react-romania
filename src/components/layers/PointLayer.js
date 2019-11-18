@@ -1,31 +1,29 @@
 import React from 'react'
 import classnames from 'classnames'
-import idnames from '../../utils/idnames'
 
 function PointLayer(props) {
 
     const style = {pointerEvents: 'none', overflow: 'visible'}
 
-    return <g id={idnames(props.id, 'pointsGroup')}
-        className={classnames(props.id, 'pointsGroup')}>
+    return <g className={'pointsGroup'}>
     {   
         props.data.map((d,i) => {
             const [x, y] = props.projector.centroid(d.geometry)
+            
             return (
             <g 
-                id={idnames(props.id, d.properties.id, 'pointCircleGroup')} 
+                id={d.properties.id} 
                 key={i}
-                className={classnames(props.id, 'pointCircleGroup')}>    
+                className={'pointCircleGroup'}>    
                 <line
                     x1={x}
                     y1={y}
                     x2={x}
                     y2={y}
-                    id={idnames(props.id, d.properties.id, 'pointCircle')}
-                    className={classnames(props.id, 'pointCircle', props.classes.point)} />
+                    id={d.properties.id}
+                    className={classnames('pointCircle', props.classes.point)} />
                 <foreignObject x={x} y={y} width={1} height={1} style={style}>
-                    <div id={idnames(props.id, d.properties.id, 'pointLabel')} 
-                        className={classnames(props.id, props.classes.pointLabel)}>
+                    <div id={d.properties.id} className={classnames(props.id, props.classes.pointLabel)}>
                        <span>{d.properties.defaultLabel}</span>
                     </div>
                 </foreignObject>

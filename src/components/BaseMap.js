@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from 'react'
 import ReactDOMServer from 'react-dom/server';
-import classnames from 'classnames'
-import { idnames, d3classnames } from '../utils/idnames'
 
 import PathLayer from './layers/PathLayer'
 import LabelLayer from './layers/LabelLayer'
@@ -9,39 +7,57 @@ import PointLayer from './layers/PointLayer'
 import TooltipLayer from './layers/TooltipLayer'
 
 import { geoMercator, geoPath } from 'd3-geo'
-import { select, selectAll, mouse } from 'd3'
+import { select, mouse } from 'd3'
 
 import withSize from 'react-sizeme'
 
-import {keyBy, merge, mergeWith, values, isEqual} from 'lodash-es'
 
-// const attachTooltip = () => {
-
-// }
-
-const updateTooltip = (mapId, d, node, tooltip) => {
-  const position = mouse(node);
-  select('#' + idnames(mapId, 'tooltipObject'))
-  .attr('x', position[0] + 10)
-  .attr('y', position[1] + 10)
-  select('#' + idnames(mapId, 'tooltipDiv'))
-  .html(typeof(tooltip) === 'function' ? 
-    ReactDOMServer.renderToString(tooltip(d.properties)) : '')
+const updateFillOnPrimaryLayer = (node, props) => {
+  updateFillOnPathLayer(node, 'primary', 
+    props.primaryMapData, props.defaultPolygonFill);
 }
 
-const removeTooltip = (mapId) => {
-  select('#' + idnames(mapId, 'tooltipDiv')).html('')
+const updateFillOnSecondaryLayer = (node, props) => {
+  updateFillOnPathLayer(node, 'secondary', 
+    props.secondaryMapData, props.defaultPolygonFill);
 }
 
-const join = (leftArray, rightArray, leftOn, rightOn) => {
-  let leftKeyBy = keyBy(leftArray, item => leftOn(item))
-  let rightKeyBy = keyBy(rightArray, item => rightOn(item))
-  Object.keys(rightKeyBy).forEach(e => rightKeyBy[e] = {properties: rightKeyBy[e]});
-  
-  return values(merge(leftKeyBy, rightKeyBy));
+const updateFillOnPathLayer = (node, pathLayer, data, defaultFill) => {
+  select(node)
+    .select('#' + pathLayer)
+    .selectAll('.polygonPathGroup')
+    .data(data, function(d) { return d ? d.id : this.id; }) 
+    .select('.polygonPath')
+    .style('fill', (d) => {return (d !== undefined) ? d.color : defaultFill })
+}
+
+const updateTooltip = (node, tooltip) => {
+  const [cursorX, cursorY] = mouse(node);
+  select(node)
+  .select('#tooltipObject')
+  .attr('x', cursorX + 10)
+  .attr('y', cursorY + 10)
+  .select('#tooltipDiv')
+  .html(ReactDOMServer.renderToString(tooltip))
+}
+
+const removeTooltip = (node) => {
+  select(node).select('#tooltipDiv').html('')
+}
+
+const attachTooltipToLayer = (node, pathLayer, tooltip) => {
+  select(node)
+  .select('#' + pathLayer)
+  .selectAll('.polygonPathGroup')
+  .on('click', function(d) { updateTooltip(node, tooltip(d)) })
+  .on('mousemove', function(d) { updateTooltip(node, tooltip(d)) })
+
+  select(node).on('mouseout', () => removeTooltip(node))
 }
 
 function BaseMap(props) {
+
+  const node = useRef();
 
   let width = Math.max(props.minWidth !== undefined ? props.minWidth : 0, props.size.width);
   let height = Math.max(props.minHeight !== undefined ? props.minHeight : 0, props.size.height);
@@ -49,57 +65,41 @@ function BaseMap(props) {
   const projector = geoPath().projection(geoMercator()
     .fitSize([width, height], props.primaryGeoData));
 
-  // assign primaryMapData to primaryGeoData
-  const primaryData = (props.primaryMapData !== undefined) ? 
-    join(props.primaryGeoData.features, props.primaryMapData,
-      leftItem => leftItem.properties.id, rightItem => rightItem.id) : [];
-
-  // assign secondaryMapData to secondaryGeoData
-  const secondaryData = (props.secondaryMapData !== undefined) ?
-    join(props.secondaryGeoData.features, props.secondaryMapData,
-      leftItem => [leftItem.properties.id, leftItem.properties.countyId],
-      rightItem => [rightItem.id, rightItem.countyId]) : [];
-  
-  // filter points
-  const pointData = (props.points !== undefined) ? 
-    props.pointGeoData.features.filter(point => 
-      props.points.indexOf(point.properties.id) >= 0) : props.pointGeoData.features;
-  
   useEffect(() => {
-    selectAll(d3classnames(props.mapId, 'polygonPathGroup'))
-    .data(primaryData, function(d) { return d ? 
-      idnames(props.mapId, d.properties.id, 'polygonPathGroup') : this.id; })
-    .on('click', function(d) { updateTooltip(props.mapId, d, this, props.tooltip) })
-    .on('mousemove', function(d) { updateTooltip(props.mapId, d, this, props.tooltip) })
-
-    select('svg#' + props.mapId).on('mouseout', () => removeTooltip(props.mapId))
-  }, [])
+    if (node.current) {
+      props.primaryMapData ? updateFillOnPrimaryLayer(node.current, props) : null;
+      props.secondaryMapData ? updateFillOnSecondaryLayer(node.current, props) : null;
+      
+      attachTooltipToLayer(node.current, 
+        props.secondaryTooltip ? 'secondary' : 'primary', props.tooltip);
+    }
+  }, [props]);
 
   return (
     <div>
-      <svg id={props.mapId} width={width} height={height}>
+      <svg id={props.mapId} width={width} height={height} ref={node} style={{overflow: 'visible', background: 'yellow'}}>
         {
           (props.secondaryMapData !== undefined) ?
-            <PathLayer id={props.mapId} projector={projector} data={secondaryData} 
+            <PathLayer layerId={'secondary'} projector={projector} data={props.secondaryGeoData.features} 
               polygonClass={props.classes.secondaryPolygon}/> : null 
         }
         {
           (props.primaryMapData !== undefined) ?
-          <PathLayer id={props.mapId} projector={projector} data={primaryData} 
+          <PathLayer layerId={'primary'} projector={projector} data={props.primaryGeoData.features}
             polygonClass={props.classes.primaryPolygon}/> : null
         }
         {
+          props.showLabels ? 
+            <LabelLayer projector={projector} data={props.primaryGeoData.features} 
+              classes={props.classes}/> : null
+        }
+        {
           props.showPoints ? 
-          <PointLayer id={props.mapId} projector={projector} data={pointData} 
+          <PointLayer projector={projector} data={props.pointGeoData} 
             classes={props.classes}/> : null
         } 
         {
-          props.showLabels ? 
-            <LabelLayer id={props.mapId} projector={projector} data={props.primaryGeoData.features} 
-              classes={props.classes} showDefaultLabels={props.showDefaultLabels}/> : null
-        }
-        {
-          props.showTooltip ? <TooltipLayer id={props.mapId}/> : null
+          (props.primaryTooltip || props.secondaryTooltip) ? <TooltipLayer /> : null
         }
       </svg>
     </div>
