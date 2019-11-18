@@ -1,11 +1,39 @@
 import React, { useState, useEffect } from 'react'
 
-import { MapOfRomania } from 'numeromania'
+import { MapOfRomania, MapOfRomanianCounty } from 'numeromania'
 import { makeStyles } from '@material-ui/core/styles';
 
 import { scaleLinear, extent, range, schemeBlues} from 'd3'
 
-const useStyles = makeStyles({
+const secondaryStyles = makeStyles({
+    primaryPolygon: {
+        strokeWidth: 0.5,
+        stroke: 'gray',
+        strokeOpacity: 1,
+        strokeLinejoin: 'round',
+        fillOpacity: 0,
+        pointerEvents: 'none',
+        transition: 'fill 1s ease',
+        '&:hover': {
+            stroke: 'black',
+            strokeWidth: 1,
+        }
+    },
+    secondaryPolygon: {
+        strokeWidth: 0.1,
+        stroke: 'gray',
+        strokeLinejoin: 'round',
+        fillOpacity: 1,
+        transition: 'fill 1s ease',
+        fill: 'lighgray',
+        '&:hover': {
+            stroke: 'black',
+            strokeWidth: 1,
+        }
+    }
+});
+
+const primaryStyles = makeStyles({
     label: {
       fill: 'black',
       fontSize: 10,
@@ -31,7 +59,7 @@ const useStyles = makeStyles({
         strokeLinejoin: 'round',
         fillOpacity: 1,
         pointerEvents: 'none',
-        transition: 'fill 1s ease'
+        transition: 'fill 1s ease',
     },
     point: {
         stroke: 'red',
@@ -40,7 +68,7 @@ const useStyles = makeStyles({
     },
     pointLabel: {
       fontSize: 12,
-      //background: 'white',
+      background: 'white',
       fontFamily: 'sans-serif',
       pointerEvents: 'none',
       display: 'inline-block', 
@@ -66,8 +94,8 @@ function Tooltip(props) {
     }
 
     return <div style={style}>
-        <h5>Județul {props.id}</h5>
-        <p>Populația în 2011: {props.value}</p>
+        <h5>Județul {props ? props.id : 'N/A'}</h5>
+        <p>Populația în 2011: {props ? props.value : 'N/A'}</p>
     </div>
 }
 
@@ -93,24 +121,34 @@ export default function App(props) {
             
             setMapData({primaryMapData: countyData, secondaryMapData: atuData})
         });
-        
     }, []);
 
     return (
         <div>
             <div>
                 <MapOfRomania 
-                    mapId={'firstMap'}
-                    // showLabels
-                    showTooltip
+                    showLabels
+                    primaryTooltip
                     showPoints
-                    points={['Cluj-Napoca', 'București']}
+                    points={['Cluj-Napoca', 'Turda', 'Zimnicea', 'Oradea', 'București']}
                     minHeight={500}
                     primaryMapData={mapData.primaryMapData}
                     // secondaryMapData={mapData.secondaryMapData}
-                    classes={useStyles()}
-                    tooltip={Tooltip}
-                    tooltipLevel={'secondary'}/>            
+                    classes={primaryStyles()}
+                    tooltip={Tooltip}/>            
+            </div>
+            <div>
+            <MapOfRomanianCounty 
+                // showLabels
+                primaryTooltip
+                showPoints
+                minHeight={500}
+                countyId={'CJ'}
+                primaryMapData={mapData.secondaryMapData.filter(
+                    item => item.countyId === 'CJ'
+                )}
+                classes={primaryStyles()}
+                tooltip={Tooltip}/>            
             </div>
         </div>);
 }
