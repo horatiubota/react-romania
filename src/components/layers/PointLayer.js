@@ -8,25 +8,23 @@ function PointLayer(props) {
     return <g className={'pointsGroup'}>
     {   
         props.data.map((d,i) => {
-            const [x, y] = props.projector.centroid(d.geometry)
+            const path = props.projector(d)
+            const [x, y] = props.projector.centroid(d);
             
             return (
             <g 
                 id={d.properties.id} 
                 key={i}
                 className={'pointCircleGroup'}>    
-                <line
-                    x1={x}
-                    y1={y}
-                    x2={x}
-                    y2={y}
-                    id={d.properties.id}
-                    className={classnames('pointCircle', props.classes.point)} />
                 <foreignObject x={x} y={y} width={1} height={1} style={style}>
                     <div id={d.properties.id} className={classnames(props.id, props.classes.pointLabel)}>
                        <span>{d.properties.defaultLabel}</span>
                     </div>
                 </foreignObject>
+                <path
+                    d={path}
+                    id={d.properties.id}
+                    className={classnames('pointCircle', props.classes.point)} />
             </g>);
         })
     } 

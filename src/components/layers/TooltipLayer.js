@@ -1,6 +1,4 @@
 import React from 'react'
-import classnames from 'classnames'
-import idnames from '../../utils/idnames'
 
 function TooltipLayer(props) {
     const style = {pointerEvents: 'none', overflow: 'visible'}
