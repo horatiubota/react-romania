@@ -7,15 +7,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box';
 
-import { scaleLinear, extent, range, schemeBlues, schemeReds } from 'd3'
-
-const colorize = (data) => {
-    const dataExtent = extent(data)
-    const dataRange = range(dataExtent[0], dataExtent[1],
-        (dataExtent[1] - dataExtent[0]) / 5)
-        
-        return scaleLinear().domain(dataRange).range(schemeReds[5])
-}
+import { interpolateRainbow, interpolateReds, interpolateBrBG } from 'd3'
 
 const primaryStyles = {
     label: {
@@ -45,13 +37,13 @@ const primaryStyles = {
         strokeWidth: 1,
         strokeLinecap: 'round',
         strokeOpacity: 0.75,
-        pointerEvents: 'none'
+        // pointerEvents: 'none'
     },
     pointLabel: {
         fontSize: 12,
         background: 'rgba(255, 255, 255, 0.75)',
         fontFamily: 'sans-serif',
-        pointerEvents: 'none',
+        // pointerEvents: 'none',
         display: 'inline-block',
         whiteSpace: 'nowrap',
         padding: 5
@@ -80,7 +72,7 @@ const secondaryStyles = Object.assign({...primaryStyles}, {
     }
 });
 
-function Tooltip (props) {
+function Tooltip (props, element) {
     const style = {
         display: 'inline-block',
         background: 'white',
@@ -89,28 +81,23 @@ function Tooltip (props) {
     }
     
     return <div style={style}>
-    <p>{props ? `${props.label}` : 'N/A'}</p>
-    <p><small>Populația în 2011: {props ? props.value : 'N/A'}</small></p>
+        <p>{props ? `${props.label}` : 'N/A'}</p>
+        <p><small>Populația în 2011: {props ? props.value : 'N/A'}</small></p>
     </div>
 }
 
 const getCountyData = (atuData, countyId) => {
-    const selectedCountyData = JSON.parse(JSON.stringify(
-        atuData.filter(atu => atu.countyId === countyId)));
-    const selectedCountyColorFunction = colorize(
-        selectedCountyData.map(item => Math.min(item.value, 50000)))
-    selectedCountyData.map(item => Object.assign(item, 
-        { color: selectedCountyColorFunction(item.value) }))
-    
-    return selectedCountyData;
+    // returns a deep copy of the filtered array
+    return JSON.parse(JSON.stringify(atuData.filter(atu => atu.countyId === countyId)));
 }
     
 export default function Example (props) {
     const [mapData, setMapData] = useState({ 
         primaryMapData: [], 
-        secondaryMapData: [], 
+        secondaryMapData: [],
+        pointMapData: [], 
         selectedCountyData: [],
-        selectedCounty: 'CJ',
+        selectedCounty: '',
     });
 
     const primaryClasses = makeStyles(primaryStyles)();
@@ -124,12 +111,14 @@ export default function Example (props) {
         pointTypes: 'Municipiu resedinta de judet',
         minHeight: 300,
         minWidth: 300,
-        secondaryPaths: false,
+        secondaryPaths: false
     })
 
     const onCountyClick = d => {
+        const countyData = getCountyData(mapData.secondaryMapData, d.id);
+
         setMapData({...mapData, 
-            selectedCountyData: getCountyData(mapData.secondaryMapData, d.id),
+            selectedCountyData: countyData,
             selectedCounty: d.id
         });
     }
@@ -146,19 +135,16 @@ export default function Example (props) {
 
         const promises = [
             'data/county_population_data.json',
-            'data/atu_population_data.json'
+            'data/atu_population_data.json',
+            'data/city_population_data.json'
         ].map(url => fetch(url).then(response => response.json()))
         
-        Promise.all(promises).then(([countyData, atuData]) => {
-            const countyColorFunction = colorize(countyData.map(item => Math.max(item.value, 100000)))
-            const atuColorFunction = colorize(atuData.map(item => Math.max(item.value, 10000)))
-            
-            countyData.map(item => Object.assign(item, { color: countyColorFunction(item.value)}))
-            atuData.map(item => Object.assign(item, { color: atuColorFunction(item.value) }))
+        Promise.all(promises).then(([countyData, atuData, cityData]) => {
             
             setMapData({ 
                 primaryMapData: countyData, 
-                secondaryMapData: atuData, 
+                secondaryMapData: atuData,
+                pointMapData: cityData,
                 selectedCountyData: getCountyData(atuData, 'CJ'),
                 selectedCounty: 'CJ'
             })
@@ -172,10 +158,18 @@ export default function Example (props) {
                 <MapOfRomania
                     {...mapConfig}
                     primaryMapData={mapData.primaryMapData}
-                    secondaryMapData={mapConfig.secondaryPaths ? mapData.secondaryMapData : undefined}
+                    secondaryMapData={mapConfig.secondaryPaths ? 
+                        mapData.secondaryMapData : undefined}
+                    pointMapData={mapData.pointMapData}
                     onClick={onCountyClick}
                     classes={mapConfig.secondaryPaths ? secondaryClasses : primaryClasses}
-                    tooltip={Tooltip}/>
+                    tooltip={Tooltip}
+                    legend={{
+                        title: 'Country',
+                        color: interpolateReds,
+                        tickFormat: ",.2r",
+                    }}
+                />
                 <Box m={3}/>
                 <MapConfiguration 
                     handleCheckboxChange={handleCheckboxChange}
@@ -191,6 +185,11 @@ export default function Example (props) {
                     primaryMapData={mapData.selectedCountyData}
                     classes={primaryClasses}
                     tooltip={Tooltip}
+                    legend={{
+                        title: `County ${mapData.selectedCounty}`,
+                        color: interpolateBrBG,
+                        tickFormat: ",.2r",
+                    }}
                 />
             </Grid>
         </Grid>

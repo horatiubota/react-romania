@@ -8,8 +8,8 @@ function PathLayer(props) {
         props.data.map((d,i) => (
             <path
                 key={i}
+                id={`${d.properties.id}`}
                 d={props.projector(d.geometry)}
-                id={d.properties.id}
                 style={{fill: props.defaultPolygonFill}}
                 className={classnames(props.polygonClass, 'polygonPath')} 
             />
