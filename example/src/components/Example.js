@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box';
 
-import { interpolateRainbow, interpolateReds, interpolateBrBG } from 'd3'
+import { interpolateReds, interpolateBrBG } from 'd3'
 
 const primaryStyles = {
     label: {
@@ -111,7 +111,8 @@ export default function Example (props) {
         pointTypes: 'Municipiu resedinta de judet',
         minHeight: 300,
         minWidth: 300,
-        secondaryPaths: false
+        secondaryPaths: false,
+        colorInterpolator: undefined
     })
 
     const onCountyClick = d => {
@@ -129,6 +130,10 @@ export default function Example (props) {
 
     const handleInputChange = (property) => (event) => {
         setMapConfig({...mapConfig, [property]: event.target.value })
+    };
+
+    const handleColorChange = (interpolator) => {
+        setMapConfig({...mapConfig, colorInterpolator: interpolator })
     };
     
     useEffect(() => {
@@ -166,7 +171,7 @@ export default function Example (props) {
                     tooltip={Tooltip}
                     legend={{
                         title: 'Country',
-                        color: interpolateReds,
+                        color: mapConfig.colorInterpolator ? mapConfig.colorInterpolator : interpolateReds,
                         tickFormat: ",.2r",
                     }}
                 />
@@ -174,6 +179,7 @@ export default function Example (props) {
                 <MapConfiguration 
                     handleCheckboxChange={handleCheckboxChange}
                     handleInputChange={handleInputChange}
+                    handleColorChange={handleColorChange}
                     {...mapConfig}
                 />
             </Grid>
