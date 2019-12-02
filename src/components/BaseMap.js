@@ -89,61 +89,80 @@ const drawLegend = (node, props) => {
 }
 
 function BaseMap(props) {
-
-  const node = useRef();
-  const legend = useRef();
   
-  let width = Math.max(props.minWidth !== undefined ? props.minWidth : 0, props.size.width);
-  let height = Math.max(props.minHeight !== undefined ? props.minHeight : 0, props.size.height);
+  const { 
+    primaryGeoData, secondaryGeoData, pointGeoData, 
+    primaryMapData, secondaryMapData, pointMapData, 
+    classes, labels, tooltip, legend, 
+    minWidth, minHeight, size, onClick
+  } = props; 
 
-  const mercator = geoMercator().fitSize([width, height], props.primaryGeoData)
+  const mapRef = useRef();
+  const legendRef = useRef();
+  
+  let width = Math.max(minWidth !== undefined ? minWidth : 0, size.width);
+  let height = Math.max(minHeight !== undefined ? minHeight : 0, size.height);
+
+  const mercator = geoMercator().fitSize([width, height], primaryGeoData)
   const projector = geoPath().projection(mercator);
 
-  useEffect(() => {
-    if (node.current && props.primaryMapData.length) {
-      props.primaryMapData ? updateFillOnPrimaryLayer(node.current, props) : null;
-      props.secondaryMapData ? updateFillOnSecondaryLayer(node.current, props) : null;
-      props.pointMapData ? attachTooltipToPoints(node.current, props): null;
+  const style = {overflow: 'visible'};
 
-      attachClickHandlerToLayer(node.current, 
-        props.secondaryClick ? 'secondary' : 'primary', props.onClick)
+  useEffect(() => {
+    if (mapRef.current && primaryMapData.length) {
+      primaryMapData && updateFillOnPrimaryLayer(mapRef.current, props);
+      secondaryMapData && updateFillOnSecondaryLayer(mapRef.current, props);
+      pointMapData && attachTooltipToPoints(mapRef.current, props);
+
+      attachClickHandlerToLayer(mapRef.current, 
+        props.secondaryClick ? 'secondary' : 'primary', onClick)
       
-      attachTooltipToLayer(node.current, 
-        props.secondaryTooltip ? 'secondary' : 'primary', props.tooltip);
-      
-      props.legend ? drawLegend(legend.current, props) : null;
+      attachTooltipToLayer(mapRef.current, 
+        props.secondaryTooltip ? 'secondary' : 'primary', tooltip);
     }
-  }, [props.primaryMapData, props.secondaryMapData]);
+  }, [primaryMapData, secondaryMapData]);
+
+  useEffect(() => {
+    if (mapRef.current && primaryMapData.length) {
+      primaryMapData && updateFillOnPrimaryLayer(mapRef.current, props);
+    }
+  }, [legend.color]);  
+
+  useEffect(() => {
+    if (legendRef.current && primaryMapData.length) {
+      legend && drawLegend(legendRef.current, props);
+    }
+  }, [size]);
 
   return (
     <div>
-      <svg id={props.mapId} width={width} height={height} ref={node} style={{overflow: 'visible'}}>
+      <svg width={width} height={height} ref={mapRef} style={style}>
         {
-          (props.secondaryMapData !== undefined) ?
-            <PathLayer layerId={'secondary'} projector={projector} data={props.secondaryGeoData.features} 
-              polygonClass={props.classes.secondaryPolygon}/> : null 
+          (secondaryMapData !== undefined) &&
+            <PathLayer layerId={'secondary'} projector={projector} data={secondaryGeoData.features} 
+              polygonClass={props.classes.secondaryPolygon} />
         }
         {
-          (props.primaryMapData !== undefined) ?
-          <PathLayer layerId={'primary'} projector={projector} data={props.primaryGeoData.features}
-            polygonClass={props.classes.primaryPolygon}/> : null
+          (props.primaryMapData !== undefined) &&
+          <PathLayer layerId={'primary'} projector={projector} data={primaryGeoData.features}
+            polygonClass={classes.primaryPolygon} />
         }
         {
-          props.showLabels ? 
-            <LabelLayer projector={projector} data={props.primaryGeoData.features} 
-              labels={props.labels} classes={props.classes}/> : null
+          props.showLabels && 
+            <LabelLayer projector={projector} data={primaryGeoData.features} 
+              labels={labels} classes={classes} />
         }
         {
-          props.showPoints ? 
+          props.showPoints && 
           // data is already a list of features
-          <PointLayer projector={projector} data={props.pointGeoData} 
-            classes={props.classes}/> : null
+          <PointLayer projector={projector} data={pointGeoData} 
+            classes={classes} /> 
         } 
         {
-          (props.tooltip !== undefined) ? <TooltipLayer /> : null
+          (tooltip !== undefined) && <TooltipLayer />
         }
       </svg>
-      <svg ref={legend} width={width} height={height * 0.2} style={{overflow: 'visible'}}></svg>
+      <svg width={width} height={height * 0.2} ref={legendRef} style={style} />
     </div>
   );
 }
