@@ -1,12 +1,13 @@
 
 /*
-Adapted from https://observablehq.com/@d3/color-legend
+ Adapted from https://observablehq.com/@d3/color-legend
 */
 
 import { range, quantile, select, format, mouse,
     interpolateRound, scaleLinear, axisBottom } from 'd3';
 
-function legend(node, {
+function legend({
+    node,
     color,
     title,
     tickSize = 6,
