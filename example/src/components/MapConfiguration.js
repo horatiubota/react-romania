@@ -56,8 +56,8 @@ export default function MapConfiguration (props) {
             <Box m={1}/>
             <FormControl>
                 <FormControlLabel
-                    control={<Checkbox checked={props.secondaryPaths} onChange={props.handleCheckboxChange('secondaryPaths')} />}
-                    label="secondaryPaths"
+                    control={<Checkbox checked={props.showSecondaryPaths} onChange={props.handleCheckboxChange('showSecondaryPaths')} />}
+                    label="showSecondaryPaths"
                 />
             </FormControl>
             <FormControl>

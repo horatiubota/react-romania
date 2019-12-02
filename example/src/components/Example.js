@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box';
 
-import { interpolateReds, interpolateBrBG } from 'd3'
+import { interpolateReds, scaleSequentialQuantile } from 'd3'
 
 const primaryStyles = {
     label: {
@@ -77,7 +77,7 @@ function Tooltip (props, element) {
         display: 'inline-block',
         background: 'white',
         padding: '0 1em',
-        whiteSpace: 'nowrap'
+        whiteSpace: 'nowrap',
     }
     
     return <div style={style}>
@@ -87,7 +87,7 @@ function Tooltip (props, element) {
 }
 
 const getCountyData = (atuData, countyId) => {
-    // returns a deep copy of the filtered array
+    // deep copy of the filtered array
     return JSON.parse(JSON.stringify(atuData.filter(atu => atu.countyId === countyId)));
 }
     
@@ -111,7 +111,7 @@ export default function Example (props) {
         pointTypes: 'Municipiu resedinta de judet',
         minHeight: 300,
         minWidth: 300,
-        secondaryPaths: false,
+        showSecondaryPaths: false,
         colorInterpolator: undefined
     })
 
@@ -161,19 +161,18 @@ export default function Example (props) {
             <Grid item xs={12}><h3>Map of Romania</h3></Grid>
             <Grid item md={6} xs={12}>
                 <MapOfRomania
-                    {...mapConfig}
                     primaryMapData={mapData.primaryMapData}
-                    secondaryMapData={mapConfig.secondaryPaths ? 
+                    secondaryMapData={mapConfig.showSecondaryPaths ? 
                         mapData.secondaryMapData : undefined}
                     pointMapData={mapData.pointMapData}
-                    onClick={onCountyClick}
-                    classes={mapConfig.secondaryPaths ? secondaryClasses : primaryClasses}
+                    scale={scaleSequentialQuantile}
+                    color={mapConfig.colorInterpolator || interpolateReds}
                     tooltip={Tooltip}
-                    legend={{
-                        title: 'Country',
-                        color: mapConfig.colorInterpolator ? mapConfig.colorInterpolator : interpolateReds,
-                        tickFormat: ",.2r",
-                    }}
+                    legend={{ title: 'Romania\'s Population' }}
+                    classes={mapConfig.showSecondaryPaths 
+                        ? secondaryClasses : primaryClasses}
+                    onClick={onCountyClick}
+                    {...mapConfig}
                 />
                 <Box m={3}/>
                 <MapConfiguration 
@@ -185,17 +184,16 @@ export default function Example (props) {
             </Grid>
             <Grid item md={6} xs={12}>
                 <MapOfRomanianCounty
-                    minHeight={300}
-                    showPoints
-                    countyId={mapData.selectedCounty}
+                    minHeight={300} 
+                    minWidth={300}
+                    countyId={mapData.selectedCounty || 'CJ'}
                     primaryMapData={mapData.selectedCountyData}
-                    classes={primaryClasses}
+                    scale={scaleSequentialQuantile}
+                    color={mapConfig.colorInterpolator || interpolateReds}
+                    legend={{ title: `${mapData.selectedCounty} County Population` }}
                     tooltip={Tooltip}
-                    legend={{
-                        title: `County ${mapData.selectedCounty}`,
-                        color: interpolateBrBG,
-                        tickFormat: ",.2r",
-                    }}
+                    classes={primaryClasses}
+                    showPoints
                 />
             </Grid>
         </Grid>
