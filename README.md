@@ -14,6 +14,10 @@
 
 [![NPM](https://img.shields.io/npm/v/react-romania.svg)](https://www.npmjs.com/package/react-romania) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## Demo
+
+Check out the demo here: [https://horatiubota.github.io/react-romania/](https://horatiubota.github.io/react-romania/)
+
 ## Install
 
 ```bash
