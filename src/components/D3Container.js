@@ -83,7 +83,7 @@ const onLegendMouseout = (node, classes, showSecondaryPaths) => {
 }
 
 const updateLegend = (node, color, props) => {
-    const { size, legendProps, classes, showSecondaryPaths } = props
+    const { size, legend: legendProps, classes, showSecondaryPaths } = props
 
     legend({
         ...legendProps,
