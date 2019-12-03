@@ -5,9 +5,9 @@ import MapConfiguration from './MapConfiguration'
 
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
-import Box from '@material-ui/core/Box';
+import Box from '@material-ui/core/Box'
 
-import { interpolateReds, scaleSequentialQuantile } from 'd3'
+import { scales, colors } from '../utils/mapConfigOptions'
 
 const primaryStyles = {
     label: {
@@ -23,13 +23,21 @@ const primaryStyles = {
         strokeOpacity: 1,
         strokeLinejoin: 'round',
         fillOpacity: 0.9,
-        transition: 'fill 1s ease',
+        transition: 'fill 0.5s ease',
         '&:hover': {
             stroke: 'black',
-            strokeWidth: 0.75,
-            strokeOpacity: 0.5,
+            strokeWidth: 1,
+            strokeOpacity: 1,
             fillOpacity: 1
         }
+    },
+    highlightedPolygon: {
+        fill: 'lightgray!important',
+        strokeWidth: 1,
+        stroke: 'black',
+        strokeOpacity: 0.5,
+        strokeLinejoin: 'round',
+        fillOpacity: 1
     },
     point: {
         fill: 'blue',
@@ -43,7 +51,7 @@ const primaryStyles = {
         fontSize: 12,
         background: 'rgba(255, 255, 255, 0.75)',
         fontFamily: 'sans-serif',
-        // pointerEvents: 'none',
+        pointerEvents: 'none',
         display: 'inline-block',
         whiteSpace: 'nowrap',
         padding: 5
@@ -92,27 +100,29 @@ const getCountyData = (atuData, countyId) => {
 }
     
 export default function Example (props) {
+    const primaryClasses = makeStyles(primaryStyles)();
+    const secondaryClasses = makeStyles(secondaryStyles)();
+
     const [mapData, setMapData] = useState({ 
         primaryMapData: [], 
         secondaryMapData: [],
         pointMapData: [], 
         selectedCountyData: [],
         selectedCounty: '',
-    });
-
-    const primaryClasses = makeStyles(primaryStyles)();
-    const secondaryClasses = makeStyles(secondaryStyles)();
+    })
 
     const [mapConfig, setMapConfig] = useState({
-        showLabels: true,
-        labels: 'CJ, TM, IS, B',
-        showPoints: true,
-        pointNames: 'Cluj-Napoca, Timișoara, Iași, București',
-        pointTypes: 'Municipiu resedinta de judet',
         minHeight: 300,
         minWidth: 300,
+        showLabels: true,
+        showPoints: true,
+        showPointLabels: true,
         showSecondaryPaths: false,
-        colorInterpolator: undefined
+        labels: ['AB', 'BN'],
+        pointNames: ['Cluj-Napoca', 'Lugoj', 'Zimnicea', 'București'],
+        pointTypes: ['Municipiu reședință de județ'],
+        scale: scales[0],
+        color: colors[0]
     })
 
     const onCountyClick = d => {
@@ -126,16 +136,12 @@ export default function Example (props) {
 
     const handleCheckboxChange = (property) => (event) => {
         setMapConfig({...mapConfig, [property]: !mapConfig[property] })
-    };
+    }
 
     const handleInputChange = (property) => (event) => {
         setMapConfig({...mapConfig, [property]: event.target.value })
-    };
+    }
 
-    const handleColorChange = (interpolator) => {
-        setMapConfig({...mapConfig, colorInterpolator: interpolator })
-    };
-    
     useEffect(() => {
 
         const promises = [
@@ -161,39 +167,41 @@ export default function Example (props) {
             <Grid item xs={12}><h3>Map of Romania</h3></Grid>
             <Grid item md={6} xs={12}>
                 <MapOfRomania
+                    {...mapConfig}
                     primaryMapData={mapData.primaryMapData}
                     secondaryMapData={mapConfig.showSecondaryPaths ? 
                         mapData.secondaryMapData : undefined}
                     pointMapData={mapData.pointMapData}
-                    scale={scaleSequentialQuantile}
-                    color={mapConfig.colorInterpolator || interpolateReds}
+                    scale={mapConfig.scale.scale}
+                    color={mapConfig.color[mapConfig.scale.colorType]}
                     tooltip={Tooltip}
-                    legend={{ title: 'Romania\'s Population' }}
+                    legend={{ title: 'Population' }}
                     classes={mapConfig.showSecondaryPaths 
                         ? secondaryClasses : primaryClasses}
                     onClick={onCountyClick}
-                    {...mapConfig}
                 />
                 <Box m={3}/>
                 <MapConfiguration 
                     handleCheckboxChange={handleCheckboxChange}
                     handleInputChange={handleInputChange}
-                    handleColorChange={handleColorChange}
                     {...mapConfig}
                 />
             </Grid>
             <Grid item md={6} xs={12}>
                 <MapOfRomanianCounty
+                    {...mapConfig}
                     minHeight={300} 
                     minWidth={300}
                     countyId={mapData.selectedCounty || 'CJ'}
                     primaryMapData={mapData.selectedCountyData}
-                    scale={scaleSequentialQuantile}
-                    color={mapConfig.colorInterpolator || interpolateReds}
-                    legend={{ title: `${mapData.selectedCounty} County Population` }}
+                    // overwrite mapConfig
+                    pointNames={[]}
+                    showSecondaryPaths={false}
+                    scale={mapConfig.scale.scale}
+                    color={mapConfig.color[mapConfig.scale.colorType]}
                     tooltip={Tooltip}
+                    legend={{ title: `${mapData.selectedCounty} County Population` }}
                     classes={primaryClasses}
-                    showPoints
                 />
             </Grid>
         </Grid>

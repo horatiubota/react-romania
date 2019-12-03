@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
@@ -8,53 +8,60 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
+import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
+import { makeStyles } from '@material-ui/core/styles';
 
-import { 
-    interpolateReds,
-    interpolateBlues,
-    interpolateBrBG,
-    interpolatePRGn,
-    interpolateCividis
-} from 'd3';
+import { scales, colors, countyIds, cities, cityTypes } from '../utils/mapConfigOptions'
 
-const colors = {
-    Reds: {label: 'Reds', interpolator: interpolateReds},
-    Blues: {label: 'Blues', interpolator: interpolateBlues},
-    BrBG: {label: 'BrBG', interpolator: interpolateBrBG},
-    PrGN: {label: 'PrGN', interpolator: interpolatePRGn},
-    Cividis: {label: 'Cividis', interpolator: interpolateCividis},
-}
+const useStyles = makeStyles({
+    formControl: {
+      marginTop: '1em',
+    }
+})
 
 export default function MapConfiguration (props) {
 
-    const [color, setColor] = useState(colors.Reds.label)
-    const handleColorChange = (event) => {
-        setColor(event.target.value);
-        props.handleColorChange(colors[event.target.value].interpolator);
-    }
+    const classes = useStyles();
 
     return (
         <Grid container>
             <Grid item xs={12}>
             <FormGroup>
-            <FormControl>
-                <InputLabel id="demo-simple-select-label">Color scheme</InputLabel>
+            <FormControl className={classes.formControl}>
+                <InputLabel id="scale-select-label">Scale type</InputLabel>
                 <Select
-                    labelId="demo-simple-select-label"
-                    onChange={handleColorChange}
-                    value={color}
+                    labelId="scale-select-label"
+                    onChange={props.handleInputChange('scale')}
+                    value={props.scale}
                 >
-                <MenuItem value={colors.Reds.label}>Reds</MenuItem>
-                <MenuItem value={colors.Blues.label}>Blues</MenuItem>
-                <MenuItem value={colors.BrBG.label}>BrBG</MenuItem>
-                <MenuItem value={colors.PrGN.label}>PrGN</MenuItem>
-                <MenuItem value={colors.Cividis.label}>Cividis</MenuItem>
+                { 
+                    scales.map(item => 
+                        <MenuItem key={item.label} value={item}>
+                            {item.label}
+                        </MenuItem>
+                    )
+                }
                 </Select>
             </FormControl>
-            <Box m={1}/>
-            <FormControl>
+            <FormControl className={classes.formControl}>
+                <InputLabel id="color-select-label">Color scheme</InputLabel>
+                <Select
+                    labelId="color-select-label"
+                    onChange={props.handleInputChange('color')}
+                    value={props.color}
+                >
+                { 
+                    colors.map(item => 
+                        <MenuItem key={item.label} value={item}>
+                            {item.label}
+                        </MenuItem>
+                    )
+                } 
+                </Select>
+            </FormControl>
+            <FormControl className={classes.formControl}>
                 <FormControlLabel
                     control={<Checkbox checked={props.showSecondaryPaths} onChange={props.handleCheckboxChange('showSecondaryPaths')} />}
                     label="showSecondaryPaths"
@@ -66,49 +73,101 @@ export default function MapConfiguration (props) {
                     label="showLabels"
                 />
             </FormControl>
-            <FormControl>
-                <TextField
+            <FormControl className={classes.formControl}>
+                <InputLabel id="select-labels-label">Labels</InputLabel>
+                <Select
+                    labelId="select-labels-label"
+                    id="select-labels"
                     disabled={!props.showLabels}
-                    id="outlined-basic"
-                    label="Labels"
-                    margin="normal"
-                    variant="outlined"
+                    multiple
                     value={props.labels}
                     onChange={props.handleInputChange('labels')}
-                />
+                    input={<Input />}
+                    renderValue={value => 
+                        <span>{(value.length > 9) ? 
+                            `${value.slice(0, 10).join(', ')}, ...` :  `${value}`}
+                        </span>
+                    }>
+                    {
+                        countyIds.map(id => (
+                            <MenuItem key={id} value={id}>
+                                {id}
+                            </MenuItem>
+                            )
+                        )
+                    }
+                </Select>
             </FormControl>
-            </FormGroup>
-            </Grid>
-            <Box m={1}/>
-            <Grid item xs={12}>
-            <FormGroup>
+            <FormControl className={classes.formControl}>
+                <FormControlLabel
+                    control={
+                    <Checkbox 
+                        checked={props.showPoints} 
+                        onChange={props.handleCheckboxChange('showPoints')} 
+                        value={true} />
+                    }
+                    label="showPoints" />
+            </FormControl>
             <FormControl>
                 <FormControlLabel
-                    control={<Checkbox checked={props.showPoints} onChange={props.handleCheckboxChange('showPoints')} value={true} />}
-                    label="showPoints"
-                />
+                    control={
+                        <Checkbox 
+                            disabled={!props.showPoints}
+                            checked={props.showPointLabels} 
+                            onChange={props.handleCheckboxChange('showPointLabels')} 
+                            value={true} />
+                    }
+                    label="showPointLabels" />
             </FormControl>
-            <FormControl>
-                <TextField
+            <FormControl className={classes.formControl}>
+                <InputLabel id="select-point-names-label">Point names</InputLabel>
+                <Select
+                    labelId="select-point-names-label"
+                    id="select-point-names"
                     disabled={!props.showPoints}
-                    id="outlined-basic"
-                    label="Point Names"
-                    margin="normal"
-                    variant="outlined"
+                    multiple
                     value={props.pointNames}
                     onChange={props.handleInputChange('pointNames')}
-                />
+                    input={<Input />}
+                    renderValue={value => 
+                        <span>{(value.length > 3) ? 
+                            `${value.slice(0, 4).join(', ')}, ...` :  `${value}`}
+                        </span>
+                    }>
+                    {
+                        cities.map(name => (
+                            <MenuItem key={name} value={name}>
+                                {name}
+                            </MenuItem>
+                            )
+                        )
+                    }
+                </Select>
             </FormControl>
-            <FormControl>
-                <TextField
+            <FormControl className={classes.formControl}>
+                <InputLabel id="select-point-types-label">Point types</InputLabel>
+                <Select
+                    labelId="select-point-types-label"
+                    id="select-point-types"
                     disabled={!props.showPoints}
-                    id="outlined-basic"
-                    label="Point Types"
-                    margin="normal"
-                    variant="outlined"
+                    multiple
                     value={props.pointTypes}
                     onChange={props.handleInputChange('pointTypes')}
-                />
+                    input={<Input />}
+                    renderValue={value => 
+                        <span>{(value.length > 1) ? 
+                            `${value[0]}, ...` :  `${value}`}
+                        </span>
+                    }>
+                    {
+                        cityTypes.map(type => (
+                            <MenuItem key={type} value={type}>
+                                {type}
+                            </MenuItem>
+                            )
+                        )
+                    }
+                </Select>
             </FormControl>
             </FormGroup>
             </Grid>
