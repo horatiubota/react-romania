@@ -16,12 +16,15 @@ function PointLayer(props) {
                 id={`${d.properties.id}`} 
                 key={i}
                 className={'pointCircleGroup'}>    
-                <foreignObject x={x} y={y} width={1} height={1} style={style}>
-                    <div id={`${d.properties.id}`}
-                        className={classnames(props.id, props.classes.pointLabel)}>
-                       <span>{d.properties.defaultLabel}</span>
-                    </div>
-                </foreignObject>
+                { 
+                    props.showPointLabels &&
+                    <foreignObject x={x} y={y} width={1} height={1} style={style}>
+                        <div id={`${d.properties.id}`}
+                            className={classnames(props.id, props.classes.pointLabel)}>
+                        <span>{d.properties.defaultLabel}</span>
+                        </div>
+                    </foreignObject>
+                }
                 <path
                     d={path}
                     id={`${d.properties.id}`} 

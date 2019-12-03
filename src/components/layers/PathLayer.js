@@ -10,7 +10,7 @@ function PathLayer(props) {
                 key={i}
                 id={`${d.properties.id}`}
                 d={props.projector(d.geometry)}
-                style={{fill: props.defaultPolygonFill}}
+                fill={props.defaultPolygonFill}
                 className={classnames(props.polygonClass, 'polygonPath')} 
             />
         ))

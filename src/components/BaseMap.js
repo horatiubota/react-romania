@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import PathLayer from './layers/PathLayer'
 import LabelLayer from './layers/LabelLayer'
+import LegendLayer from './layers/LegendLayer'
 import PointLayer from './layers/PointLayer'
 import TooltipLayer from './layers/TooltipLayer'
 import D3Container from './D3Container'
@@ -11,8 +12,9 @@ import withSize from 'react-sizeme'
 
 function BaseMap(props) {
   
-  const { primaryGeoData, secondaryGeoData, pointGeoData, primaryMapData, 
-    secondaryMapData, minWidth, minHeight, size, classes, labels, tooltip } = props 
+  const { primaryGeoData, secondaryGeoData, pointGeoData } = props
+  const { primaryMapData, secondaryMapData } = props 
+  const { minWidth, minHeight, size, classes, labels, tooltip, legend } = props
   
   let width = Math.max(minWidth !== undefined ? minWidth : 0, size.width)
   let height = Math.max(minHeight !== undefined ? minHeight : 0, size.height)
@@ -24,7 +26,7 @@ function BaseMap(props) {
 
   return (
     <D3Container {...props}>
-      <svg width={width} height={height} style={style}>
+      <svg width={width} height={height * 1.25} style={style}>
         {
           (secondaryMapData !== undefined) &&
             <PathLayer layerId='secondary' projector={projector} 
@@ -43,18 +45,18 @@ function BaseMap(props) {
         {
           props.showPoints && 
           // data is already a list of features
-          <PointLayer projector={projector} data={pointGeoData} classes={classes} /> 
+          <PointLayer projector={projector} data={pointGeoData} 
+            classes={classes} showPointLabels={props.showPointLabels}/> 
+        }
+        {
+          legend && <LegendLayer y={height}/>
         } 
         {
-          (tooltip !== undefined) && <TooltipLayer />
+          tooltip && <TooltipLayer />
         }
       </svg>
-      <svg width={width} height={height * 0.2} />
     </D3Container>
   );
 }
 
-export default withSize({
-  monitorWidth: true, 
-  monitorHeight: false   
-})(BaseMap)
+export default withSize({monitorWidth: true})(BaseMap)

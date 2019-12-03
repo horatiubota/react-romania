@@ -3,7 +3,6 @@ import ReactDOMServer from 'react-dom/server'
 import { select, mouse } from 'd3'
 
 import legend from '../utils/legend'
-import withSize from 'react-sizeme'
 
 /*
  Polygons and Points
@@ -43,13 +42,13 @@ const updateFillOnSelection = (selection, color) => {
 
 const updateTooltip = (node, tooltip) => {
     const [cursorX, cursorY] = mouse(node);
-
+    
     select(node)
     .select('#tooltipObject')
     .attr('x', cursorX + 10)
     .attr('y', cursorY + 10)
     .select('#tooltipDiv')
-    .html(ReactDOMServer.renderToString(tooltip))
+    .html(ReactDOMServer.renderToString(tooltip))    
 }
 
 const removeTooltip = (node) => {
@@ -67,15 +66,36 @@ const attachTooltipToSelection = (node, selection, tooltip) => {
  Legend
 */
 
-const updateLegend = (node, color, size, legendProps) => {
-    legend(Object.assign({
+const onLegendMousemove = (node, classes, bounds, showSecondaryPaths) => {
+    const [lower, upper] = bounds;
+    
+    (showSecondaryPaths ? 
+        getSecondaryPolygonSelection(node) :
+        getPrimaryPolygonSelection(node)
+    ).classed(classes.highlightedPolygon, d => (d.value >= lower && d.value <= upper))
+}
+
+const onLegendMouseout = (node, classes, showSecondaryPaths) => {
+    (showSecondaryPaths ? 
+        getSecondaryPolygonSelection(node) :
+        getPrimaryPolygonSelection(node)
+    ).classed(classes.highlightedPolygon, false)
+}
+
+const updateLegend = (node, color, props) => {
+    const { size, legendProps, classes, showSecondaryPaths } = props
+
+    legend({
+        ...legendProps,
         node: node,
         color: color,
         tickFormat: ",.2r",
         width: size.width,
-        marginLeft: size.width * 0.1,
-        marginRight: size.width * 0.1,
-    }, {...legendProps}));
+        marginLeft: size.width * 0.05,
+        marginRight: size.width * 0.05,
+        onMousemove: bounds => onLegendMousemove(node, classes, bounds, showSecondaryPaths),
+        onMouseout: () => onLegendMouseout(node, classes, showSecondaryPaths)
+    });
 }
 
 /*
@@ -89,12 +109,13 @@ const attachClickHandlerToSelection = (selection, f) => {
 export default function D3Container(props) {
 
     const ref = useRef();
-    const [mapSvg, legendSvg] = ref.current ? ref.current.children : []
+    const [mapSvg] = ref.current ? ref.current.children : []
+
     const { primaryMapData, secondaryMapData, pointMapData } = props;
     const { size, scale, color, legend, tooltip } = props;
 
     useEffect(() => {
-        if (primaryMapData && primaryMapData.length) {            
+        if (mapSvg && primaryMapData && primaryMapData.length) {            
             const primaryPolygons = getPrimaryPolygonSelection(mapSvg)
             const primaryColor = getColor(scale, color, primaryMapData)
 
@@ -128,7 +149,7 @@ export default function D3Container(props) {
             getColor(scale, color, secondaryMapData) :
             getColor(scale, color, primaryMapData)
 
-        updateLegend(legendSvg, legendColor, size, legend)
+        mapSvg && updateLegend(mapSvg, legendColor, props)
     }, [size, legend, scale, color])
 
     return (

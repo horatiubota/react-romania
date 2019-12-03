@@ -10,29 +10,54 @@ function legend({
     node,
     color,
     title,
-    tickSize = 6,
+    tickSize = 5,
     width = 320, 
-    height = 44 + tickSize,
+    height = 46 + tickSize,
     marginTop = 18,
     marginRight = 0,
     marginBottom = 16 + tickSize,
     marginLeft = 0,
     ticks = width / 64,
     tickFormat,
-    tickValues
+    tickValues, 
+    onMousemove,
+    onMouseout,
+    onMouseclick
 } = {}) {
-    
-    const svg = select(node);
+
     let x;
-    
+    const svg = select(node).select('#legendGroup')
+
     // Continuous
     if (color.interpolator) {
+
         x = Object.assign(color.copy()
         .interpolator(interpolateRound(marginLeft, width - marginRight)),
         {range() { return [marginLeft, width - marginRight]; }});
         
+        // scaleSequentialQuantile doesn’t implement ticks or tickFormat.
+        if (!x.ticks) {
+            if (tickValues === undefined) {
+                const n = Math.round(ticks + 1);
+                tickValues = range(n).map(i => quantile(color.domain(), i / (n - 1)));
+                
+            }
+            if (typeof tickFormat !== "function") {
+                tickFormat = format(tickFormat === undefined ? ",f" : tickFormat);
+            }
+        } else {
+            tickValues = x.ticks()
+        }
+
         // remove image before re-drawing
         svg.select("image").remove();
+
+        const imageWidth = width - marginLeft - marginRight
+        const segmentWidth = 1 / (tickValues.length - 1)
+        const getLegendSegmentIndex = ([cursorX,,]) => {
+            const cursorPosition = (cursorX - marginLeft) / imageWidth
+            return Math.floor(cursorPosition / segmentWidth)
+        }
 
         svg.append("image")
         .attr("x", marginLeft)
@@ -41,18 +66,15 @@ function legend({
         .attr("height", height - marginTop - marginBottom)
         .attr("preserveAspectRatio", "none")
         .attr("xlink:href", ramp(color.interpolator()).toDataURL())
-        .on("mousemove", () => { const [cursorX, cursorY] = mouse(node) });
-        
-        // scaleSequentialQuantile doesn’t implement ticks or tickFormat.
-        if (!x.ticks) {
-            if (tickValues === undefined) {
-                const n = Math.round(ticks + 1);
-                tickValues = range(n).map(i => quantile(color.domain(), i / (n - 1)));
+        // sequential scales do not implement invertExtent, 
+        // approximate based on image and segment width
+        .on("mousemove", () => { 
+            if (typeof onMousemove === 'function') {
+                const segmentIndex = getLegendSegmentIndex(mouse(node))
+                onMousemove(tickValues.slice(segmentIndex, segmentIndex + 2))
             }
-            if (typeof tickFormat !== "function") {
-                tickFormat = format(tickFormat === undefined ? ",f" : tickFormat);
-            }
-        }
+        })
+        .on("mouseout", () => (typeof onMouseout === 'function') && onMouseout())
     }
     
     // Discrete
@@ -69,9 +91,12 @@ function legend({
         
         x = scaleLinear()
         .domain([-1, color.range().length - 1])
-        .rangeRound([marginLeft, width - marginRight]);
+        .rangeRound([Math.round(marginLeft - 1), Math.round(width - marginRight + 1)]);
         
+        svg.select("#legendRects").remove();
+
         svg.append("g")
+        .attr("id", "legendRects")
         .selectAll("rect")
         .data(color.range())
         .join("rect")
@@ -79,13 +104,16 @@ function legend({
         .attr("y", marginTop)
         .attr("width", (d, i) => x(i) - x(i - 1))
         .attr("height", height - marginTop - marginBottom)
-        .attr("fill", d => d);
-        
+        .attr("fill", d => d)
+        .on("mousemove", d => (typeof onMousemove === 'function') 
+            && onMousemove(color.invertExtent(d)))
+        .on("mouseout", () => (typeof onMouseout === 'function') && onMouseout());
+
         tickValues = range(thresholds.length);
         tickFormat = i => thresholdFormat(thresholds[i], i);
     }
     
-    // remove all elements before re-drawing
+    // remove all axis symbols before re-drawing
     svg.select("#legendSymbols").remove();
 
     svg.append("g")

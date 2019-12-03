@@ -8,7 +8,6 @@ import geoData from './data'
 const { counties, atus, cities } = geoData;
 
 const filterPoints = (points, pointNames, pointTypes, countyId) => {
-
     // filter points by name
     points = (pointNames && pointNames.length) ?
         points.filter(point => pointNames.indexOf(point.properties.name) >= 0) : points
@@ -16,7 +15,7 @@ const filterPoints = (points, pointNames, pointTypes, countyId) => {
     // filter points by type
     points = (pointTypes && pointTypes.length) ? 
         points.filter(point => pointTypes.indexOf(point.properties.type) >= 0) : points
-
+    
     // filter points by countyId
     points = (countyId !== undefined) ? 
         points.filter(point => countyId === point.properties.countyId) : points
@@ -27,7 +26,7 @@ const filterPoints = (points, pointNames, pointTypes, countyId) => {
 function MapOfRomanianCounty(props) {
     const { pointNames, pointTypes, countyId } = props
     const pointGeoData = filterPoints(cities.features, 
-        pointTypes, pointNames, countyId)
+        pointNames, pointTypes, countyId)
     
     const countyGeoData = {
         features: atus.features.filter(atu => 
