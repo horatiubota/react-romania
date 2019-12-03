@@ -10,7 +10,7 @@ export default `{
                 "id": "TR.Zimnicea",
                 "name": "Zimnicea",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -30,7 +30,7 @@ export default `{
                 "id": "DJ.Bechet",
                 "name": "Bechet",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -50,7 +50,7 @@ export default `{
                 "id": "OT.Corabia",
                 "name": "Corabia",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -70,7 +70,7 @@ export default `{
                 "id": "DJ.D\u0103buleni",
                 "name": "D\u0103buleni",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -90,7 +90,7 @@ export default `{
                 "id": "TR.Alexandria",
                 "name": "Alexandria",
                 "region": "Sud",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -110,7 +110,7 @@ export default `{
                 "id": "DJ.Calafat",
                 "name": "Calafat",
                 "region": "Sud-Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -130,7 +130,7 @@ export default `{
                 "id": "DJ.B\u0103ile\u0219ti",
                 "name": "B\u0103ile\u0219ti",
                 "region": "Sud-Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -150,7 +150,7 @@ export default `{
                 "id": "OT.Caracal",
                 "name": "Caracal",
                 "region": "Sud-Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -170,7 +170,7 @@ export default `{
                 "id": "DJ.Segarcea",
                 "name": "Segarcea",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -190,7 +190,7 @@ export default `{
                 "id": "CL.Olteni\u021ba",
                 "name": "Olteni\u021ba",
                 "region": "Sud",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -210,7 +210,7 @@ export default `{
                 "id": "OT.Dr\u0103g\u0103ne\u0219ti-Olt",
                 "name": "Dr\u0103g\u0103ne\u0219ti-Olt",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -230,7 +230,7 @@ export default `{
                 "id": "TR.Videle",
                 "name": "Videle",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -250,7 +250,7 @@ export default `{
                 "id": "CL.C\u0103l\u0103ra\u0219i",
                 "name": "C\u0103l\u0103ra\u0219i",
                 "region": "Sud",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -270,7 +270,7 @@ export default `{
                 "id": "DJ.Craiova",
                 "name": "Craiova",
                 "region": "Sud-Vest",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -290,7 +290,7 @@ export default `{
                 "id": "OT.Piatra-Olt",
                 "name": "Piatra-Olt",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -310,7 +310,7 @@ export default `{
                 "id": "GR.Bolintin-Vale",
                 "name": "Bolintin-Vale",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -330,7 +330,7 @@ export default `{
                 "id": "MH.V\u00eenju Mare",
                 "name": "V\u00eenju Mare",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -350,7 +350,7 @@ export default `{
                 "id": "IL.Fete\u0219ti",
                 "name": "Fete\u0219ti",
                 "region": "Sud",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -370,7 +370,7 @@ export default `{
                 "id": "OT.Potcoava",
                 "name": "Potcoava",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -390,7 +390,7 @@ export default `{
                 "id": "CL.Fundulea",
                 "name": "Fundulea",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -410,7 +410,7 @@ export default `{
                 "id": "IF.Buftea",
                 "name": "Buftea",
                 "region": "Bucure\u0219ti-Ilfov",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -430,7 +430,7 @@ export default `{
                 "id": "DJ.Filia\u0219i",
                 "name": "Filia\u0219i",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -450,7 +450,7 @@ export default `{
                 "id": "DB.Titu",
                 "name": "Titu",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -470,7 +470,7 @@ export default `{
                 "id": "VL.Dr\u0103g\u0103\u0219ani",
                 "name": "Dr\u0103g\u0103\u0219ani",
                 "region": "Sud-Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -490,7 +490,7 @@ export default `{
                 "id": "MH.Strehaia",
                 "name": "Strehaia",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -510,7 +510,7 @@ export default `{
                 "id": "VL.B\u0103lce\u0219ti",
                 "name": "B\u0103lce\u0219ti",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -530,7 +530,7 @@ export default `{
                 "id": "IL.Amara",
                 "name": "Amara",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -550,7 +550,7 @@ export default `{
                 "id": "DB.R\u0103cari",
                 "name": "R\u0103cari",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -570,7 +570,7 @@ export default `{
                 "id": "IL.C\u0103z\u0103ne\u0219ti",
                 "name": "C\u0103z\u0103ne\u0219ti",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -590,7 +590,7 @@ export default `{
                 "id": "IL.Fierbin\u021bi-T\u00e2rg",
                 "name": "Fierbin\u021bi-T\u00e2rg",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -610,7 +610,7 @@ export default `{
                 "id": "DB.G\u0103e\u0219ti",
                 "name": "G\u0103e\u0219ti",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -630,7 +630,7 @@ export default `{
                 "id": "AG.Coste\u0219ti",
                 "name": "Coste\u0219ti",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -650,7 +650,7 @@ export default `{
                 "id": "GJ.Turceni",
                 "name": "Turceni",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -670,7 +670,7 @@ export default `{
                 "id": "IL.Urziceni",
                 "name": "Urziceni",
                 "region": "Sud",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -690,7 +690,7 @@ export default `{
                 "id": "MH.Or\u0219ova",
                 "name": "Or\u0219ova",
                 "region": "Sud-Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -710,7 +710,7 @@ export default `{
                 "id": "IL.\u021a\u0103nd\u0103rei",
                 "name": "\u021a\u0103nd\u0103rei",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -730,7 +730,7 @@ export default `{
                 "id": "AG.Topoloveni",
                 "name": "Topoloveni",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -750,7 +750,7 @@ export default `{
                 "id": "CS.Moldova Nou\u0103",
                 "name": "Moldova Nou\u0103",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -770,7 +770,7 @@ export default `{
                 "id": "GJ.Motru",
                 "name": "Motru",
                 "region": "Sud-Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -790,7 +790,7 @@ export default `{
                 "id": "GJ.\u021aicleni",
                 "name": "\u021aicleni",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -810,7 +810,7 @@ export default `{
                 "id": "DB.T\u00eergovi\u0219te",
                 "name": "T\u00eergovi\u0219te",
                 "region": "Sud",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -830,7 +830,7 @@ export default `{
                 "id": "BZ.Pogoanele",
                 "name": "Pogoanele",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -850,7 +850,7 @@ export default `{
                 "id": "AG.Mioveni",
                 "name": "Mioveni",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -870,7 +870,7 @@ export default `{
                 "id": "VL.B\u0103beni",
                 "name": "B\u0103beni",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -890,7 +890,7 @@ export default `{
                 "id": "CS.B\u0103ile Herculane",
                 "name": "B\u0103ile Herculane",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -910,7 +910,7 @@ export default `{
                 "id": "DB.Moreni",
                 "name": "Moreni",
                 "region": "Sud",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -930,7 +930,7 @@ export default `{
                 "id": "GJ.T\u00eergu C\u0103rbune\u0219ti",
                 "name": "T\u00eergu C\u0103rbune\u0219ti",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -950,7 +950,7 @@ export default `{
                 "id": "VL.Berbe\u0219ti",
                 "name": "Berbe\u0219ti",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -970,7 +970,7 @@ export default `{
                 "id": "PH.Urla\u021bi",
                 "name": "Urla\u021bi",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -990,7 +990,7 @@ export default `{
                 "id": "PH.Plopeni",
                 "name": "Plopeni",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1010,7 +1010,7 @@ export default `{
                 "id": "BR.\u00censur\u0103\u021bei",
                 "name": "\u00censur\u0103\u021bei",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1030,7 +1030,7 @@ export default `{
                 "id": "PH.B\u0103icoi",
                 "name": "B\u0103icoi",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1050,7 +1050,7 @@ export default `{
                 "id": "MH.Baia de Aram\u0103",
                 "name": "Baia de Aram\u0103",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1070,7 +1070,7 @@ export default `{
                 "id": "VL.B\u0103ile Govora",
                 "name": "B\u0103ile Govora",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1090,7 +1090,7 @@ export default `{
                 "id": "GJ.T\u00eergu Jiu",
                 "name": "T\u00eergu Jiu",
                 "region": "Sud-Vest",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1110,7 +1110,7 @@ export default `{
                 "id": "DB.Pucioasa",
                 "name": "Pucioasa",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1130,7 +1130,7 @@ export default `{
                 "id": "BR.F\u0103urei",
                 "name": "F\u0103urei",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1150,7 +1150,7 @@ export default `{
                 "id": "DB.Fieni",
                 "name": "Fieni",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1170,7 +1170,7 @@ export default `{
                 "id": "AG.Curtea de Arge\u0219",
                 "name": "Curtea de Arge\u0219",
                 "region": "Sud",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1190,7 +1190,7 @@ export default `{
                 "id": "CS.Oravi\u021ba",
                 "name": "Oravi\u021ba",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1210,7 +1210,7 @@ export default `{
                 "id": "PH.C\u00e2mpina",
                 "name": "C\u00e2mpina",
                 "region": "Sud",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1230,7 +1230,7 @@ export default `{
                 "id": "CS.Anina",
                 "name": "Anina",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1250,7 +1250,7 @@ export default `{
                 "id": "BZ.Buz\u0103u",
                 "name": "Buz\u0103u",
                 "region": "Sud-Est",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1270,7 +1270,7 @@ export default `{
                 "id": "PH.V\u0103lenii de Munte",
                 "name": "V\u0103lenii de Munte",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1290,7 +1290,7 @@ export default `{
                 "id": "PH.Sl\u0103nic",
                 "name": "Sl\u0103nic",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1310,7 +1310,7 @@ export default `{
                 "id": "VL.Horezu",
                 "name": "Horezu",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1330,7 +1330,7 @@ export default `{
                 "id": "PH.Comarnic",
                 "name": "Comarnic",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1350,7 +1350,7 @@ export default `{
                 "id": "VL.C\u0103lim\u0103ne\u0219ti",
                 "name": "C\u0103lim\u0103ne\u0219ti",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1370,7 +1370,7 @@ export default `{
                 "id": "GJ.Bumbe\u0219ti-Jiu",
                 "name": "Bumbe\u0219ti-Jiu",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1390,7 +1390,7 @@ export default `{
                 "id": "BZ.P\u0103t\u00e2rlagele",
                 "name": "P\u0103t\u00e2rlagele",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1410,7 +1410,7 @@ export default `{
                 "id": "PH.Sinaia",
                 "name": "Sinaia",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1430,7 +1430,7 @@ export default `{
                 "id": "CS.Re\u0219i\u021ba",
                 "name": "Re\u0219i\u021ba",
                 "region": "Vest",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1450,7 +1450,7 @@ export default `{
                 "id": "HD.Aninoasa",
                 "name": "Aninoasa",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1470,7 +1470,7 @@ export default `{
                 "id": "HD.Vulcan",
                 "name": "Vulcan",
                 "region": "Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1490,7 +1490,7 @@ export default `{
                 "id": "TM.Deta",
                 "name": "Deta",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1510,7 +1510,7 @@ export default `{
                 "id": "BZ.Nehoiu",
                 "name": "Nehoiu",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1530,7 +1530,7 @@ export default `{
                 "id": "PH.Azuga",
                 "name": "Azuga",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1550,7 +1550,7 @@ export default `{
                 "id": "CS.Boc\u0219a",
                 "name": "Boc\u0219a",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1570,7 +1570,7 @@ export default `{
                 "id": "CS.Caransebe\u0219",
                 "name": "Caransebe\u0219",
                 "region": "Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1590,7 +1590,7 @@ export default `{
                 "id": "BV.Predeal",
                 "name": "Predeal",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1610,7 +1610,7 @@ export default `{
                 "id": "TM.G\u0103taia",
                 "name": "G\u0103taia",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1630,7 +1630,7 @@ export default `{
                 "id": "CS.O\u021belu Ro\u0219u",
                 "name": "O\u021belu Ro\u0219u",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1650,7 +1650,7 @@ export default `{
                 "id": "GL.Gala\u021bi",
                 "name": "Gala\u021bi",
                 "region": "Sud-Est",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1670,7 +1670,7 @@ export default `{
                 "id": "BV.Z\u0103rne\u0219ti",
                 "name": "Z\u0103rne\u0219ti",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1690,7 +1690,7 @@ export default `{
                 "id": "TM.Ciacova",
                 "name": "Ciacova",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1710,7 +1710,7 @@ export default `{
                 "id": "BV.S\u0103cele",
                 "name": "S\u0103cele",
                 "region": "Centru",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1730,7 +1730,7 @@ export default `{
                 "id": "SB.T\u0103lmaciu",
                 "name": "T\u0103lmaciu",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1750,7 +1750,7 @@ export default `{
                 "id": "BV.Ghimbav",
                 "name": "Ghimbav",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1770,7 +1770,7 @@ export default `{
                 "id": "BV.Victoria",
                 "name": "Victoria",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1790,7 +1790,7 @@ export default `{
                 "id": "TM.Buzia\u0219",
                 "name": "Buzia\u0219",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1810,7 +1810,7 @@ export default `{
                 "id": "CV.\u00centorsura Buz\u0103ului",
                 "name": "\u00centorsura Buz\u0103ului",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1830,7 +1830,7 @@ export default `{
                 "id": "BV.Bra\u0219ov",
                 "name": "Bra\u0219ov",
                 "region": "Centru",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1850,7 +1850,7 @@ export default `{
                 "id": "VN.Foc\u0219ani",
                 "name": "Foc\u0219ani",
                 "region": "Sud-Est",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1870,7 +1870,7 @@ export default `{
                 "id": "BV.Codlea",
                 "name": "Codlea",
                 "region": "Centru",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1890,7 +1890,7 @@ export default `{
                 "id": "SB.Cisn\u0103die",
                 "name": "Cisn\u0103die",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1910,7 +1910,7 @@ export default `{
                 "id": "TM.Lugoj",
                 "name": "Lugoj",
                 "region": "Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1930,7 +1930,7 @@ export default `{
                 "id": "SB.Avrig",
                 "name": "Avrig",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1950,7 +1950,7 @@ export default `{
                 "id": "VN.Odobe\u0219ti",
                 "name": "Odobe\u0219ti",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1970,7 +1970,7 @@ export default `{
                 "id": "HD.C\u0103lan",
                 "name": "C\u0103lan",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -1990,7 +1990,7 @@ export default `{
                 "id": "CV.Covasna",
                 "name": "Covasna",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2010,7 +2010,7 @@ export default `{
                 "id": "BV.F\u0103g\u0103ra\u0219",
                 "name": "F\u0103g\u0103ra\u0219",
                 "region": "Centru",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2030,7 +2030,7 @@ export default `{
                 "id": "SB.S\u0103li\u0219te",
                 "name": "S\u0103li\u0219te",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2050,7 +2050,7 @@ export default `{
                 "id": "TM.Timi\u0219oara",
                 "name": "Timi\u0219oara",
                 "region": "Vest",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2070,7 +2070,7 @@ export default `{
                 "id": "HD.Or\u0103\u0219tie",
                 "name": "Or\u0103\u0219tie",
                 "region": "Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2090,7 +2090,7 @@ export default `{
                 "id": "CV.Sf\u00eentu Gheorghe",
                 "name": "Sf\u00eentu Gheorghe",
                 "region": "Centru",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2110,7 +2110,7 @@ export default `{
                 "id": "TM.Jimbolia",
                 "name": "Jimbolia",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2130,7 +2130,7 @@ export default `{
                 "id": "SB.Ocna Sibiului",
                 "name": "Ocna Sibiului",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2150,7 +2150,7 @@ export default `{
                 "id": "SB.Miercurea Sibiului",
                 "name": "Miercurea Sibiului",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2170,7 +2170,7 @@ export default `{
                 "id": "TM.F\u0103get",
                 "name": "F\u0103get",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2190,7 +2190,7 @@ export default `{
                 "id": "TM.Reca\u0219",
                 "name": "Reca\u0219",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2210,7 +2210,7 @@ export default `{
                 "id": "AB.Sebe\u0219",
                 "name": "Sebe\u0219",
                 "region": "Centru",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2230,7 +2230,7 @@ export default `{
                 "id": "CV.T\u00e2rgu Secuiesc",
                 "name": "T\u00e2rgu Secuiesc",
                 "region": "Centru",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2250,7 +2250,7 @@ export default `{
                 "id": "SB.Agnita",
                 "name": "Agnita",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2270,7 +2270,7 @@ export default `{
                 "id": "BV.Rupea",
                 "name": "Rupea",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2290,7 +2290,7 @@ export default `{
                 "id": "SB.Cop\u0219a Mic\u0103",
                 "name": "Cop\u0219a Mic\u0103",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2310,7 +2310,7 @@ export default `{
                 "id": "HR.B\u0103ile Tu\u0219nad",
                 "name": "B\u0103ile Tu\u0219nad",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2330,7 +2330,7 @@ export default `{
                 "id": "VN.Adjud",
                 "name": "Adjud",
                 "region": "Sud-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2350,7 +2350,7 @@ export default `{
                 "id": "SB.Media\u0219",
                 "name": "Media\u0219",
                 "region": "Centru",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2370,7 +2370,7 @@ export default `{
                 "id": "TM.S\u00e2nnicolau Mare",
                 "name": "S\u00e2nnicolau Mare",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2390,7 +2390,7 @@ export default `{
                 "id": "AB.Blaj",
                 "name": "Blaj",
                 "region": "Centru",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2410,7 +2410,7 @@ export default `{
                 "id": "AB.Zlatna",
                 "name": "Zlatna",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2430,7 +2430,7 @@ export default `{
                 "id": "AB.Teiu\u0219",
                 "name": "Teiu\u0219",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2450,7 +2450,7 @@ export default `{
                 "id": "SB.Dumbr\u0103veni",
                 "name": "Dumbr\u0103veni",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2470,7 +2470,7 @@ export default `{
                 "id": "BC.Sl\u0103nic-Moldova",
                 "name": "Sl\u0103nic-Moldova",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2490,7 +2490,7 @@ export default `{
                 "id": "MS.Sighi\u0219oara",
                 "name": "Sighi\u0219oara",
                 "region": "Centru",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2510,7 +2510,7 @@ export default `{
                 "id": "VS.B\u00eerlad",
                 "name": "B\u00eerlad",
                 "region": "Nord-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2530,7 +2530,7 @@ export default `{
                 "id": "AB.Abrud",
                 "name": "Abrud",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2550,7 +2550,7 @@ export default `{
                 "id": "HR.Cristuru Secuiesc",
                 "name": "Cristuru Secuiesc",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2570,7 +2570,7 @@ export default `{
                 "id": "AR.Arad",
                 "name": "Arad",
                 "region": "Vest",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2590,7 +2590,7 @@ export default `{
                 "id": "VS.Murgeni",
                 "name": "Murgeni",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2610,7 +2610,7 @@ export default `{
                 "id": "BC.T\u00eergu Ocna",
                 "name": "T\u00eergu Ocna",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2630,7 +2630,7 @@ export default `{
                 "id": "HR.Odorheiu Secuiesc",
                 "name": "Odorheiu Secuiesc",
                 "region": "Centru",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2650,7 +2650,7 @@ export default `{
                 "id": "AR.N\u0103dlac",
                 "name": "N\u0103dlac",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2670,7 +2670,7 @@ export default `{
                 "id": "AR.Pecica",
                 "name": "Pecica",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2690,7 +2690,7 @@ export default `{
                 "id": "AB.Aiud",
                 "name": "Aiud",
                 "region": "Centru",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2710,7 +2710,7 @@ export default `{
                 "id": "HR.Miercurea Ciuc",
                 "name": "Miercurea Ciuc",
                 "region": "Centru",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2730,7 +2730,7 @@ export default `{
                 "id": "AR.P\u00eencota",
                 "name": "P\u00eencota",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2750,7 +2750,7 @@ export default `{
                 "id": "HR.Vl\u0103hi\u021ba",
                 "name": "Vl\u0103hi\u021ba",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2770,7 +2770,7 @@ export default `{
                 "id": "AB.Baia de Arie\u0219",
                 "name": "Baia de Arie\u0219",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2790,7 +2790,7 @@ export default `{
                 "id": "AR.S\u00e2ntana",
                 "name": "S\u00e2ntana",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2810,7 +2810,7 @@ export default `{
                 "id": "BC.Com\u0103ne\u0219ti",
                 "name": "Com\u0103ne\u0219ti",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2830,7 +2830,7 @@ export default `{
                 "id": "AB.Ocna Mure\u0219",
                 "name": "Ocna Mure\u0219",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2850,7 +2850,7 @@ export default `{
                 "id": "MS.S\u00e2ngeorgiu de P\u0103dure",
                 "name": "S\u00e2ngeorgiu de P\u0103dure",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2870,7 +2870,7 @@ export default `{
                 "id": "AR.Curtici",
                 "name": "Curtici",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2890,7 +2890,7 @@ export default `{
                 "id": "MS.Iernut",
                 "name": "Iernut",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2910,7 +2910,7 @@ export default `{
                 "id": "AB.C\u00eempeni",
                 "name": "C\u00eempeni",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2930,7 +2930,7 @@ export default `{
                 "id": "BH.Va\u0219c\u0103u",
                 "name": "Va\u0219c\u0103u",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2950,7 +2950,7 @@ export default `{
                 "id": "MS.Ungheni",
                 "name": "Ungheni",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2970,7 +2970,7 @@ export default `{
                 "id": "BH.Nucet",
                 "name": "Nucet",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -2990,7 +2990,7 @@ export default `{
                 "id": "MS.Ludu\u0219",
                 "name": "Ludu\u0219",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3010,7 +3010,7 @@ export default `{
                 "id": "AR.Ineu",
                 "name": "Ineu",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3030,7 +3030,7 @@ export default `{
                 "id": "CJ.C\u00e2mpia Turzii",
                 "name": "C\u00e2mpia Turzii",
                 "region": "Nord-Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3050,7 +3050,7 @@ export default `{
                 "id": "BH.\u0218tei",
                 "name": "\u0218tei",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3070,7 +3070,7 @@ export default `{
                 "id": "MS.Miercurea Nirajului",
                 "name": "Miercurea Nirajului",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3090,7 +3090,7 @@ export default `{
                 "id": "AR.Chi\u0219ineu-Cri\u0219",
                 "name": "Chi\u0219ineu-Cri\u0219",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3110,7 +3110,7 @@ export default `{
                 "id": "HR.B\u0103lan",
                 "name": "B\u0103lan",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3130,7 +3130,7 @@ export default `{
                 "id": "MS.Sovata",
                 "name": "Sovata",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3150,7 +3150,7 @@ export default `{
                 "id": "VS.Vaslui",
                 "name": "Vaslui",
                 "region": "Nord-Est",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3170,7 +3170,7 @@ export default `{
                 "id": "BH.Beiu\u0219",
                 "name": "Beiu\u0219",
                 "region": "Nord-Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3190,7 +3190,7 @@ export default `{
                 "id": "BC.Buhu\u0219i",
                 "name": "Buhu\u0219i",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3210,7 +3210,7 @@ export default `{
                 "id": "MS.Sarma\u0219u",
                 "name": "Sarma\u0219u",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3230,7 +3230,7 @@ export default `{
                 "id": "HR.Gheorgheni",
                 "name": "Gheorgheni",
                 "region": "Centru",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3250,7 +3250,7 @@ export default `{
                 "id": "VS.Negre\u0219ti",
                 "name": "Negre\u0219ti",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3270,7 +3270,7 @@ export default `{
                 "id": "BH.Salonta",
                 "name": "Salonta",
                 "region": "Nord-Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3290,7 +3290,7 @@ export default `{
                 "id": "CJ.Huedin",
                 "name": "Huedin",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3310,7 +3310,7 @@ export default `{
                 "id": "NT.Bicaz",
                 "name": "Bicaz",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3330,7 +3330,7 @@ export default `{
                 "id": "CJ.Gherla",
                 "name": "Gherla",
                 "region": "Nord-Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3350,7 +3350,7 @@ export default `{
                 "id": "HR.Topli\u021ba",
                 "name": "Topli\u021ba",
                 "region": "Centru",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3370,7 +3370,7 @@ export default `{
                 "id": "BH.Oradea",
                 "name": "Oradea",
                 "region": "Nord-Vest",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3390,7 +3390,7 @@ export default `{
                 "id": "BH.Ale\u0219d",
                 "name": "Ale\u0219d",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3410,7 +3410,7 @@ export default `{
                 "id": "BN.Beclean",
                 "name": "Beclean",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3430,7 +3430,7 @@ export default `{
                 "id": "SJ.Zal\u0103u",
                 "name": "Zal\u0103u",
                 "region": "Nord-Vest",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3450,7 +3450,7 @@ export default `{
                 "id": "SJ.\u0218imleu Silvaniei",
                 "name": "\u0218imleu Silvaniei",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3470,7 +3470,7 @@ export default `{
                 "id": "SV.Bro\u0219teni",
                 "name": "Bro\u0219teni",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3490,7 +3490,7 @@ export default `{
                 "id": "BN.N\u0103s\u0103ud",
                 "name": "N\u0103s\u0103ud",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3510,7 +3510,7 @@ export default `{
                 "id": "SV.Vatra Dornei",
                 "name": "Vatra Dornei",
                 "region": "Nord-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3530,7 +3530,7 @@ export default `{
                 "id": "BH.S\u0103cueni",
                 "name": "S\u0103cueni",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3550,7 +3550,7 @@ export default `{
                 "id": "BH.Marghita",
                 "name": "Marghita",
                 "region": "Nord-Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3570,7 +3570,7 @@ export default `{
                 "id": "SV.F\u0103lticeni",
                 "name": "F\u0103lticeni",
                 "region": "Nord-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3590,7 +3590,7 @@ export default `{
                 "id": "MM.Ulmeni",
                 "name": "Ulmeni",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3610,7 +3610,7 @@ export default `{
                 "id": "BN.S\u00eengeorz-B\u0103i",
                 "name": "S\u00eengeorz-B\u0103i",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3630,7 +3630,7 @@ export default `{
                 "id": "MM.T\u00eergu L\u0103pu\u0219",
                 "name": "T\u00eergu L\u0103pu\u0219",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3650,7 +3650,7 @@ export default `{
                 "id": "MM.\u0218omcuta Mare",
                 "name": "\u0218omcuta Mare",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3670,7 +3670,7 @@ export default `{
                 "id": "SV.Liteni",
                 "name": "Liteni",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3690,7 +3690,7 @@ export default `{
                 "id": "SV.C\u00e2mpulung Moldovenesc",
                 "name": "C\u00e2mpulung Moldovenesc",
                 "region": "Nord-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3710,7 +3710,7 @@ export default `{
                 "id": "SV.Frasin",
                 "name": "Frasin",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3730,7 +3730,7 @@ export default `{
                 "id": "SV.Gura Humorului",
                 "name": "Gura Humorului",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3750,7 +3750,7 @@ export default `{
                 "id": "BT.Fl\u0103m\u00e2nzi",
                 "name": "Fl\u0103m\u00e2nzi",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3770,7 +3770,7 @@ export default `{
                 "id": "BH.Valea lui Mihai",
                 "name": "Valea lui Mihai",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3790,7 +3790,7 @@ export default `{
                 "id": "MM.Dragomire\u0219ti",
                 "name": "Dragomire\u0219ti",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3810,7 +3810,7 @@ export default `{
                 "id": "MM.S\u0103li\u0219tea de Sus",
                 "name": "S\u0103li\u0219tea de Sus",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3830,7 +3830,7 @@ export default `{
                 "id": "MM.Cavnic",
                 "name": "Cavnic",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3850,7 +3850,7 @@ export default `{
                 "id": "SV.Suceava",
                 "name": "Suceava",
                 "region": "Nord-Est",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3870,7 +3870,7 @@ export default `{
                 "id": "MM.Bor\u0219a",
                 "name": "Bor\u0219a",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3890,7 +3890,7 @@ export default `{
                 "id": "SV.Solca",
                 "name": "Solca",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3910,7 +3910,7 @@ export default `{
                 "id": "MM.Baia Sprie",
                 "name": "Baia Sprie",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3930,7 +3930,7 @@ export default `{
                 "id": "SV.Cajvana",
                 "name": "Cajvana",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3950,7 +3950,7 @@ export default `{
                 "id": "BT.Boto\u0219ani",
                 "name": "Boto\u0219ani",
                 "region": "Nord-Est",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3970,7 +3970,7 @@ export default `{
                 "id": "BT.Bucecea",
                 "name": "Bucecea",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -3990,7 +3990,7 @@ export default `{
                 "id": "SV.Mili\u0219\u0103u\u021bi",
                 "name": "Mili\u0219\u0103u\u021bi",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4010,7 +4010,7 @@ export default `{
                 "id": "MM.Vi\u0219eu de Sus",
                 "name": "Vi\u0219eu de Sus",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4030,7 +4030,7 @@ export default `{
                 "id": "BT.\u0218tef\u0103ne\u0219ti",
                 "name": "\u0218tef\u0103ne\u0219ti",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4050,7 +4050,7 @@ export default `{
                 "id": "SV.R\u0103d\u0103u\u021bi",
                 "name": "R\u0103d\u0103u\u021bi",
                 "region": "Nord-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4070,7 +4070,7 @@ export default `{
                 "id": "BT.S\u0103veni",
                 "name": "S\u0103veni",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4090,7 +4090,7 @@ export default `{
                 "id": "BT.Dorohoi",
                 "name": "Dorohoi",
                 "region": "Nord-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4110,7 +4110,7 @@ export default `{
                 "id": "BT.Darabani",
                 "name": "Darabani",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4130,7 +4130,7 @@ export default `{
                 "id": "SV.Vicovu de Sus",
                 "name": "Vicovu de Sus",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4150,7 +4150,7 @@ export default `{
                 "id": "AR.Sebi\u0219",
                 "name": "Sebi\u0219",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4170,7 +4170,7 @@ export default `{
                 "id": "VS.Hu\u0219i",
                 "name": "Hu\u0219i",
                 "region": "Nord-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4190,7 +4190,7 @@ export default `{
                 "id": "MS.T\u00eergu Mure\u0219",
                 "name": "T\u00eergu Mure\u0219",
                 "region": "Centru",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4210,7 +4210,7 @@ export default `{
                 "id": "SJ.Jibou",
                 "name": "Jibou",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4230,7 +4230,7 @@ export default `{
                 "id": "MS.T\u00e2rn\u0103veni",
                 "name": "T\u00e2rn\u0103veni",
                 "region": "Centru",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4250,7 +4250,7 @@ export default `{
                 "id": "HR.Borsec",
                 "name": "Borsec",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4270,7 +4270,7 @@ export default `{
                 "id": "VN.Panciu",
                 "name": "Panciu",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4290,7 +4290,7 @@ export default `{
                 "id": "GJ.Novaci",
                 "name": "Novaci",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4310,7 +4310,7 @@ export default `{
                 "id": "PH.Bu\u0219teni",
                 "name": "Bu\u0219teni",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4330,7 +4330,7 @@ export default `{
                 "id": "BV.R\u00e2\u0219nov",
                 "name": "R\u00e2\u0219nov",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4350,7 +4350,7 @@ export default `{
                 "id": "SB.Sibiu",
                 "name": "Sibiu",
                 "region": "Centru",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4370,7 +4370,7 @@ export default `{
                 "id": "PH.Ploie\u0219ti",
                 "name": "Ploie\u0219ti",
                 "region": "Sud",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4390,7 +4390,7 @@ export default `{
                 "id": "PH.Bolde\u0219ti-Sc\u0103eni",
                 "name": "Bolde\u0219ti-Sc\u0103eni",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4410,7 +4410,7 @@ export default `{
                 "id": "AR.Lipova",
                 "name": "Lipova",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4430,7 +4430,7 @@ export default `{
                 "id": "NT.Roznov",
                 "name": "Roznov",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4450,7 +4450,7 @@ export default `{
                 "id": "SJ.Cehu Silvaniei",
                 "name": "Cehu Silvaniei",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4470,7 +4470,7 @@ export default `{
                 "id": "GL.Tecuci",
                 "name": "Tecuci",
                 "region": "Sud-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4490,7 +4490,7 @@ export default `{
                 "id": "GL.Bere\u0219ti",
                 "name": "Bere\u0219ti",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4510,7 +4510,7 @@ export default `{
                 "id": "CV.Baraolt",
                 "name": "Baraolt",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4530,7 +4530,7 @@ export default `{
                 "id": "CL.Lehliu-Gar\u0103",
                 "name": "Lehliu-Gar\u0103",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4550,7 +4550,7 @@ export default `{
                 "id": "CL.Bude\u0219ti",
                 "name": "Bude\u0219ti",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4570,7 +4570,7 @@ export default `{
                 "id": "IL.Slobozia",
                 "name": "Slobozia",
                 "region": "Sud",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4590,7 +4590,7 @@ export default `{
                 "id": "BR.Ianca",
                 "name": "Ianca",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4610,7 +4610,7 @@ export default `{
                 "id": "MM.Seini",
                 "name": "Seini",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4630,7 +4630,7 @@ export default `{
                 "id": "IF.Chitila",
                 "name": "Chitila",
                 "region": "Bucure\u0219ti-Ilfov",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4650,7 +4650,7 @@ export default `{
                 "id": "HD.Hunedoara",
                 "name": "Hunedoara",
                 "region": "Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4670,7 +4670,7 @@ export default `{
                 "id": "PH.Mizil",
                 "name": "Mizil",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4690,7 +4690,7 @@ export default `{
                 "id": "GL.T\u00eergu Bujor",
                 "name": "T\u00eergu Bujor",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4710,7 +4710,7 @@ export default `{
                 "id": "NT.Roman",
                 "name": "Roman",
                 "region": "Nord-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4730,7 +4730,7 @@ export default `{
                 "id": "NT.T\u00eergu Neam\u021b",
                 "name": "T\u00eergu Neam\u021b",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4750,7 +4750,7 @@ export default `{
                 "id": "SV.Salcea",
                 "name": "Salcea",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4770,7 +4770,7 @@ export default `{
                 "id": "SV.Siret",
                 "name": "Siret",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4790,7 +4790,7 @@ export default `{
                 "id": "MS.Reghin",
                 "name": "Reghin",
                 "region": "Centru",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4810,7 +4810,7 @@ export default `{
                 "id": "SV.Dolhasca",
                 "name": "Dolhasca",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4830,7 +4830,7 @@ export default `{
                 "id": "BN.Bistri\u021ba",
                 "name": "Bistri\u021ba",
                 "region": "Nord-Vest",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4850,7 +4850,7 @@ export default `{
                 "id": "BZ.R\u00e2mnicu S\u0103rat",
                 "name": "R\u00e2mnicu S\u0103rat",
                 "region": "Sud-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4870,7 +4870,7 @@ export default `{
                 "id": "AG.\u0218tef\u0103ne\u0219ti",
                 "name": "\u0218tef\u0103ne\u0219ti",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4890,7 +4890,7 @@ export default `{
                 "id": "AG.Pite\u0219ti",
                 "name": "Pite\u0219ti",
                 "region": "Sud",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4910,7 +4910,7 @@ export default `{
                 "id": "HD.Brad",
                 "name": "Brad",
                 "region": "Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4930,7 +4930,7 @@ export default `{
                 "id": "NT.Piatra-Neam\u021b",
                 "name": "Piatra-Neam\u021b",
                 "region": "Nord-Est",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4950,7 +4950,7 @@ export default `{
                 "id": "SM.Carei",
                 "name": "Carei",
                 "region": "Nord-Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4970,7 +4970,7 @@ export default `{
                 "id": "SM.Negre\u0219ti-Oa\u0219",
                 "name": "Negre\u0219ti-Oa\u0219",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -4990,7 +4990,7 @@ export default `{
                 "id": "MH.Drobeta-Turnu Severin",
                 "name": "Drobeta-Turnu Severin",
                 "region": "Sud-Vest",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5010,7 +5010,7 @@ export default `{
                 "id": "SM.Satu Mare",
                 "name": "Satu Mare",
                 "region": "Nord-Vest",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5030,7 +5030,7 @@ export default `{
                 "id": "SM.T\u0103\u0219nad",
                 "name": "T\u0103\u0219nad",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5050,7 +5050,7 @@ export default `{
                 "id": "SM.Livada",
                 "name": "Livada",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5070,7 +5070,7 @@ export default `{
                 "id": "SM.Ardud",
                 "name": "Ardud",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5090,7 +5090,7 @@ export default `{
                 "id": "GR.Mih\u0103ile\u0219ti",
                 "name": "Mih\u0103ile\u0219ti",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5110,7 +5110,7 @@ export default `{
                 "id": "IF.Otopeni",
                 "name": "Otopeni",
                 "region": "Bucure\u0219ti-Ilfov",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5130,7 +5130,7 @@ export default `{
                 "id": "IF.Voluntari",
                 "name": "Voluntari",
                 "region": "Bucure\u0219ti-Ilfov",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5150,7 +5150,7 @@ export default `{
                 "id": "VL.Ocnele Mari",
                 "name": "Ocnele Mari",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5170,7 +5170,7 @@ export default `{
                 "id": "VL.R\u00e2mnicu V\u00e2lcea",
                 "name": "R\u00e2mnicu V\u00e2lcea",
                 "region": "Sud-Vest",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5190,7 +5190,7 @@ export default `{
                 "id": "CT.H\u00e2r\u0219ova",
                 "name": "H\u00e2r\u0219ova",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5210,7 +5210,7 @@ export default `{
                 "id": "CT.B\u0103neasa",
                 "name": "B\u0103neasa",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5230,7 +5230,7 @@ export default `{
                 "id": "IS.Podu Iloaiei",
                 "name": "Podu Iloaiei",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5250,7 +5250,7 @@ export default `{
                 "id": "IS.Pa\u0219cani",
                 "name": "Pa\u0219cani",
                 "region": "Nord-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5270,7 +5270,7 @@ export default `{
                 "id": "IS.Ia\u0219i",
                 "name": "Ia\u0219i",
                 "region": "Nord-Est",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5290,7 +5290,7 @@ export default `{
                 "id": "IS.H\u00eerl\u0103u",
                 "name": "H\u00eerl\u0103u",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5310,7 +5310,7 @@ export default `{
                 "id": "CT.Eforie",
                 "name": "Eforie",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5330,7 +5330,7 @@ export default `{
                 "id": "CT.Murfatlar",
                 "name": "Murfatlar",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5350,7 +5350,7 @@ export default `{
                 "id": "CT.Medgidia",
                 "name": "Medgidia",
                 "region": "Sud-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5370,7 +5370,7 @@ export default `{
                 "id": "CT.N\u0103vodari",
                 "name": "N\u0103vodari",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5390,7 +5390,7 @@ export default `{
                 "id": "TL.Tulcea",
                 "name": "Tulcea",
                 "region": "Sud-Est",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5410,7 +5410,7 @@ export default `{
                 "id": "TL.Isaccea",
                 "name": "Isaccea",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5430,7 +5430,7 @@ export default `{
                 "id": "TL.M\u0103cin",
                 "name": "M\u0103cin",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5450,7 +5450,7 @@ export default `{
                 "id": "TL.Babadag",
                 "name": "Babadag",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5470,7 +5470,7 @@ export default `{
                 "id": "CJ.Cluj-Napoca",
                 "name": "Cluj-Napoca",
                 "region": "Nord-Vest",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5490,7 +5490,7 @@ export default `{
                 "id": "TL.Sulina",
                 "name": "Sulina",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5510,7 +5510,7 @@ export default `{
                 "id": "AB.Alba Iulia",
                 "name": "Alba Iulia",
                 "region": "Centru",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5530,7 +5530,7 @@ export default `{
                 "id": "OT.Bal\u0219",
                 "name": "Bal\u0219",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5550,7 +5550,7 @@ export default `{
                 "id": "OT.Slatina",
                 "name": "Slatina",
                 "region": "Sud-Vest",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5570,7 +5570,7 @@ export default `{
                 "id": "OT.Scornice\u0219ti",
                 "name": "Scornice\u0219ti",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5590,7 +5590,7 @@ export default `{
                 "id": "MM.Sighetu Marma\u021biei",
                 "name": "Sighetu Marma\u021biei",
                 "region": "Nord-Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5610,7 +5610,7 @@ export default `{
                 "id": "CT.Negru Vod\u0103",
                 "name": "Negru Vod\u0103",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5630,7 +5630,7 @@ export default `{
                 "id": "CT.Cernavod\u0103",
                 "name": "Cernavod\u0103",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5650,7 +5650,7 @@ export default `{
                 "id": "CT.Techirghiol",
                 "name": "Techirghiol",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5670,7 +5670,7 @@ export default `{
                 "id": "CT.Ovidiu",
                 "name": "Ovidiu",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5690,7 +5690,7 @@ export default `{
                 "id": "CT.Mangalia",
                 "name": "Mangalia",
                 "region": "Sud-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5710,7 +5710,7 @@ export default `{
                 "id": "HD.Deva",
                 "name": "Deva",
                 "region": "Vest",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5730,7 +5730,7 @@ export default `{
                 "id": "TR.Ro\u0219iori de Vede",
                 "name": "Ro\u0219iori de Vede",
                 "region": "Sud",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5750,7 +5750,7 @@ export default `{
                 "id": "IF.Pope\u0219ti Leordeni",
                 "name": "Pope\u0219ti Leordeni",
                 "region": "Bucure\u0219ti-Ilfov",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5770,7 +5770,7 @@ export default `{
                 "id": "IF.M\u0103gurele",
                 "name": "M\u0103gurele",
                 "region": "Bucure\u0219ti-Ilfov",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5790,7 +5790,7 @@ export default `{
                 "id": "BC.D\u0103rm\u0103ne\u0219ti",
                 "name": "D\u0103rm\u0103ne\u0219ti",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5810,7 +5810,7 @@ export default `{
                 "id": "BC.One\u0219ti",
                 "name": "One\u0219ti",
                 "region": "Nord-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5830,7 +5830,7 @@ export default `{
                 "id": "BC.Bac\u0103u",
                 "name": "Bac\u0103u",
                 "region": "Nord-Est",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5850,7 +5850,7 @@ export default `{
                 "id": "BC.Moine\u0219ti",
                 "name": "Moine\u0219ti",
                 "region": "Nord-Est",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5870,7 +5870,7 @@ export default `{
                 "id": "AG.C\u00e2mpulung",
                 "name": "C\u00e2mpulung",
                 "region": "Sud",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5890,7 +5890,7 @@ export default `{
                 "id": "GJ.Rovinari",
                 "name": "Rovinari",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5910,7 +5910,7 @@ export default `{
                 "id": "HD.Lupeni",
                 "name": "Lupeni",
                 "region": "Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5930,7 +5930,7 @@ export default `{
                 "id": "HD.Uricani",
                 "name": "Uricani",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5950,7 +5950,7 @@ export default `{
                 "id": "GJ.Tismana",
                 "name": "Tismana",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5970,7 +5970,7 @@ export default `{
                 "id": "HD.Ha\u021beg",
                 "name": "Ha\u021beg",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -5990,7 +5990,7 @@ export default `{
                 "id": "HD.Simeria",
                 "name": "Simeria",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6010,7 +6010,7 @@ export default `{
                 "id": "HD.Petrila",
                 "name": "Petrila",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6030,7 +6030,7 @@ export default `{
                 "id": "HD.Petro\u0219ani",
                 "name": "Petro\u0219ani",
                 "region": "Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6050,7 +6050,7 @@ export default `{
                 "id": "HD.Geoagiu",
                 "name": "Geoagiu",
                 "region": "Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6070,7 +6070,7 @@ export default `{
                 "id": "AB.Cugir",
                 "name": "Cugir",
                 "region": "Centru",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6090,7 +6090,7 @@ export default `{
                 "id": "MM.T\u0103u\u021bii-M\u0103gher\u0103u\u0219",
                 "name": "T\u0103u\u021bii-M\u0103gher\u0103u\u0219",
                 "region": "Nord-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6110,7 +6110,7 @@ export default `{
                 "id": "MM.Baia Mare",
                 "name": "Baia Mare",
                 "region": "Nord-Vest",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6130,7 +6130,7 @@ export default `{
                 "id": "VN.M\u0103r\u0103\u0219e\u0219ti",
                 "name": "M\u0103r\u0103\u0219e\u0219ti",
                 "region": "Sud-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6150,7 +6150,7 @@ export default `{
                 "id": "CJ.Dej",
                 "name": "Dej",
                 "region": "Nord-Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6170,7 +6170,7 @@ export default `{
                 "id": "CJ.Turda",
                 "name": "Turda",
                 "region": "Nord-Vest",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6190,7 +6190,7 @@ export default `{
                 "id": "IF.Pantelimon",
                 "name": "Pantelimon",
                 "region": "Bucure\u0219ti-Ilfov",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6210,7 +6210,7 @@ export default `{
                 "id": "IS.T\u00e2rgu Frumos",
                 "name": "T\u00e2rgu Frumos",
                 "region": "Nord-Est",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6230,7 +6230,7 @@ export default `{
                 "id": "BR.Br\u0103ila",
                 "name": "Br\u0103ila",
                 "region": "Sud-Est",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6250,7 +6250,7 @@ export default `{
                 "id": "VL.Brezoi",
                 "name": "Brezoi",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6270,7 +6270,7 @@ export default `{
                 "id": "VL.B\u0103ile Ol\u0103ne\u0219ti",
                 "name": "B\u0103ile Ol\u0103ne\u0219ti",
                 "region": "Sud-Vest",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6290,7 +6290,7 @@ export default `{
                 "id": "TR.Turnu Magurele",
                 "name": "Turnu Magurele",
                 "region": "Sud",
-                "type": "Municipiu, altul decat resedinta de judet",
+                "type": "Municipiu, altul dec\u00e2t re\u0219edin\u021ba de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6310,7 +6310,7 @@ export default `{
                 "id": "PH.Breaza",
                 "name": "Breaza",
                 "region": "Sud",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6330,7 +6330,7 @@ export default `{
                 "id": "GR.Giurgiu",
                 "name": "Giurgiu",
                 "region": "Sud",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6350,7 +6350,7 @@ export default `{
                 "id": "CT.Constan\u021ba",
                 "name": "Constan\u021ba",
                 "region": "Sud-Est",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6370,7 +6370,7 @@ export default `{
                 "id": "IF.Bragadiru",
                 "name": "Bragadiru",
                 "region": "Bucure\u0219ti-Ilfov",
-                "type": "Oras",
+                "type": "Ora\u0219",
                 "version": "2017-09-27"
             },
             "geometry": {
@@ -6390,7 +6390,7 @@ export default `{
                 "id": "B.Bucure\u0219ti",
                 "name": "Bucure\u0219ti",
                 "region": "Bucure\u0219ti-Ilfov",
-                "type": "Municipiu resedinta de judet",
+                "type": "Municipiu re\u0219edin\u021b\u0103 de jude\u021b",
                 "version": "2017-09-27"
             },
             "geometry": {
