@@ -1,0 +1,212 @@
+[
+    {
+        "id": "AR",
+        "label": "AR",
+        "value": 430629
+    },
+    {
+        "id": "AG",
+        "label": "AG",
+        "value": 612431
+    },
+    {
+        "id": "BC",
+        "label": "BC",
+        "value": 616168
+    },
+    {
+        "id": "BH",
+        "label": "BH",
+        "value": 575398
+    },
+    {
+        "id": "BN",
+        "label": "BN",
+        "value": 286225
+    },
+    {
+        "id": "BT",
+        "label": "BT",
+        "value": 412626
+    },
+    {
+        "id": "BV",
+        "label": "BV",
+        "value": 549217
+    },
+    {
+        "id": "BR",
+        "label": "BR",
+        "value": 321212
+    },
+    {
+        "id": "BZ",
+        "label": "BZ",
+        "value": 451069
+    },
+    {
+        "id": "CJ",
+        "label": "CJ",
+        "value": 701343
+    },
+    {
+        "id": "CS",
+        "label": "CS",
+        "value": 295579
+    },
+    {
+        "id": "CT",
+        "label": "CT",
+        "value": 684082
+    },
+    {
+        "id": "CV",
+        "label": "CV",
+        "value": 210177
+    },
+    {
+        "id": "DJ",
+        "label": "DJ",
+        "value": 660544
+    },
+    {
+        "id": "GL",
+        "label": "GL",
+        "value": 536167
+    },
+    {
+        "id": "HR",
+        "label": "HR",
+        "value": 310867
+    },
+    {
+        "id": "IL",
+        "label": "IL",
+        "value": 274148
+    },
+    {
+        "id": "MM",
+        "label": "MM",
+        "value": 478659
+    },
+    {
+        "id": "MH",
+        "label": "MH",
+        "value": 265390
+    },
+    {
+        "id": "MS",
+        "label": "MS",
+        "value": 550846
+    },
+    {
+        "id": "OT",
+        "label": "OT",
+        "value": 436400
+    },
+    {
+        "id": "PH",
+        "label": "PH",
+        "value": 762886
+    },
+    {
+        "id": "SM",
+        "label": "SM",
+        "value": 344360
+    },
+    {
+        "id": "SB",
+        "label": "SB",
+        "value": 397322
+    },
+    {
+        "id": "SV",
+        "label": "SV",
+        "value": 634810
+    },
+    {
+        "id": "TR",
+        "label": "TR",
+        "value": 380123
+    },
+    {
+        "id": "TM",
+        "label": "TM",
+        "value": 683540
+    },
+    {
+        "id": "TL",
+        "label": "TL",
+        "value": 213083
+    },
+    {
+        "id": "VS",
+        "label": "VS",
+        "value": 395499
+    },
+    {
+        "id": "VL",
+        "label": "VL",
+        "value": 371714
+    },
+    {
+        "id": "VN",
+        "label": "VN",
+        "value": 340310
+    },
+    {
+        "id": "B",
+        "label": "B",
+        "value": 1883425
+    },
+    {
+        "id": "GR",
+        "label": "GR",
+        "value": 281422
+    },
+    {
+        "id": "DB",
+        "label": "DB",
+        "value": 518745
+    },
+    {
+        "id": "GJ",
+        "label": "GJ",
+        "value": 341594
+    },
+    {
+        "id": "HD",
+        "label": "HD",
+        "value": 418565
+    },
+    {
+        "id": "AB",
+        "label": "AB",
+        "value": 342376
+    },
+    {
+        "id": "SJ",
+        "label": "SJ",
+        "value": 224384
+    },
+    {
+        "id": "CL",
+        "label": "CL",
+        "value": 306691
+    },
+    {
+        "id": "IF",
+        "label": "IF",
+        "value": 388738
+    },
+    {
+        "id": "IS",
+        "label": "IS",
+        "value": 772348
+    },
+    {
+        "id": "NT",
+        "label": "NT",
+        "value": 470766
+    }
+]
