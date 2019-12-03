@@ -1,6 +1,6 @@
 {
-  "short_name": "numeromania",
-  "name": "numeromania",
+  "short_name": "react-romania",
+  "name": "react-romania",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",

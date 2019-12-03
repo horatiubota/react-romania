@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { MapOfRomania, MapOfRomanianCounty } from 'numeromania'
+import { MapOfRomania, MapOfRomanianCounty } from 'react-romania'
 import MapConfiguration from './MapConfiguration'
 
 import { makeStyles } from '@material-ui/core/styles'

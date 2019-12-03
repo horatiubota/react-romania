@@ -1,10 +1,10 @@
 {
-  "name": "numeromania",
+  "name": "react-romania",
   "version": "1.0.0",
   "description": "",
   "author": "horatiubota",
   "license": "MIT",
-  "repository": "horatiubota/numeromania",
+  "repository": "horatiubota/react-romania",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

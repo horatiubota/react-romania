@@ -1,20 +1,15 @@
 {
-  "name": "numeromania-example",
-  "homepage": "https://horatiubota.github.io/numeromania",
+  "name": "react-romania-example",
+  "homepage": "https://horatiubota.github.io/react-romania",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.6.0",
-    "@material-ui/system": "^4.5.2",
-    "d3-delaunay": "^5.1.6",
-    "d3-weighted-voronoi": "^1.0.1",
-    "numeromania": "file:..",
-    "prop-types": "^15.6.2",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
-    "react-scripts": "^1.1.4",
-    "styled-components": "^4.4.1"
+    "react-romania": "file:..",
+    "react-scripts": "^1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
