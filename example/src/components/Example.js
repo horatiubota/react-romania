@@ -19,23 +19,23 @@ const primaryStyles = {
     },
     primaryPolygon: {
         strokeWidth: 0.1,
-        stroke: 'black',
+        stroke: 'gray',
         strokeOpacity: 1,
         strokeLinejoin: 'round',
         fillOpacity: 0.9,
         transition: 'fill 0.5s ease',
         '&:hover': {
             stroke: 'black',
-            strokeWidth: 1,
+            strokeWidth: 0.5,
             strokeOpacity: 1,
             fillOpacity: 1
         }
     },
     highlightedPolygon: {
         fill: 'lightgray!important',
-        strokeWidth: 1,
+        strokeWidth: 0.5,
         stroke: 'black',
-        strokeOpacity: 0.5,
+        strokeOpacity: 1,
         strokeLinejoin: 'round',
         fillOpacity: 1
     },
