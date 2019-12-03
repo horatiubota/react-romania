@@ -15,12 +15,12 @@ npm install --save react-romania
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-romania'
+import MapOfRomania from 'react-romania'
 
 class Example extends Component {
   render () {
     return (
-      <MyComponent />
+      <MapOfRomania />
     )
   }
 }
