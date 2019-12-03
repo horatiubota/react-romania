@@ -1,3 +1,13 @@
+<p>&nbsp;</p>
+
+<p align='center'>
+  <img src='snapshot.png' width='83%'/>
+  <p align='center'>Responsive maps of Romania's administrative units. Made with React Hooks, Material UI 4 and D3v5.</p>
+</p>
+
+<p>&nbsp;</p>
+<!-- ![GitHub Logo](snapshot.png) -->
+
 # react-romania
 
 > 
