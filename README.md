@@ -4,13 +4,9 @@
   <img src='snapshot.png' width='83%'/>
   <p align='center'>Responsive maps of Romania's administrative units. Made with React Hooks, Material UI 4 and D3v5.</p>
 </p>
-
 <p>&nbsp;</p>
-<!-- ![GitHub Logo](snapshot.png) -->
 
 # react-romania
-
-> 
 
 [![NPM](https://img.shields.io/npm/v/react-romania.svg)](https://www.npmjs.com/package/react-romania) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -28,15 +24,12 @@ npm install --save react-romania
 
 ```jsx
 import React, { Component } from 'react'
-
 import MapOfRomania from 'react-romania'
 
-class Example extends Component {
-  render () {
-    return (
-      <MapOfRomania />
-    )
-  }
+function Example()  {
+  return (
+    <MapOfRomania />
+  )
 }
 ```
 
