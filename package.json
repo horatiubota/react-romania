@@ -60,7 +60,11 @@
   ],
   "dependencies": {
     "classnames": "^2.2.6",
+    "d3-axis": "^1.0.12",
+    "d3-format": "^1.4.2",
     "d3-geo": "^1.11.9",
+    "d3-interpolate": "^1.4.0",
+    "d3-scale": "^3.2.1",
     "d3-selection": "^1.4.1",
     "react-sizeme": "^2.6.10"
   }
