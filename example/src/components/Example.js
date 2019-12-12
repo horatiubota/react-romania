@@ -3,10 +3,8 @@ import React, { useState, useEffect } from "react";
 import { MapOfRomania, MapOfRomanianCounty } from "react-romania";
 import MapConfiguration from "./MapConfiguration";
 
-import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
-
+import { makeStyles } from "@material-ui/core/styles";
 import { scales, colors } from "../utils/mapConfigOptions";
 
 const primaryStyles = {
@@ -174,62 +172,58 @@ export default function Example(props) {
   }, []);
 
   return (
-    <Container maxWidth="md">
-      <Grid container spacing={4} maxWidth="xs">
-        <Grid item xs={12}>
-          <h3>react-romania</h3>
-          <p>
-            Responsive maps of Romania's administrative units. Made with React
-            Hooks, Material UI 4 and D3v5.
-          </p>
-          <br />
-        </Grid>
-        <Grid item md={6} xs={12}>
-          <MapOfRomania
-            {...mapConfig}
-            primaryMapData={mapData.primaryMapData}
-            secondaryMapData={
-              mapConfig.showSecondaryPaths
-                ? mapData.secondaryMapData
-                : undefined
-            }
-            pointMapData={mapData.pointMapData}
-            scale={mapConfig.scale.scale}
-            color={mapConfig.color[mapConfig.scale.colorType]}
-            tooltip={Tooltip}
-            legend={{ title: "Population" }}
-            classes={
-              mapConfig.showSecondaryPaths ? secondaryClasses : primaryClasses
-            }
-            onClick={onCountyClick}
-          />
-        </Grid>
-        <Grid item md={6} xs={12}>
-          <MapOfRomanianCounty
-            {...mapConfig}
-            minHeight={300}
-            minWidth={300}
-            countyId={mapData.selectedCounty || "CJ"}
-            primaryMapData={mapData.selectedCountyData}
-            // overwrite mapConfig
-            pointNames={[]}
-            showSecondaryPaths={false}
-            scale={mapConfig.scale.scale}
-            color={mapConfig.color[mapConfig.scale.colorType]}
-            tooltip={Tooltip}
-            legend={{ title: `${mapData.selectedCounty} County Population` }}
-            classes={primaryClasses}
-          />
-        </Grid>
-        <Grid item md={12} xs={12}>
-          <h3>Configuration</h3>
-          <MapConfiguration
-            handleCheckboxChange={handleCheckboxChange}
-            handleInputChange={handleInputChange}
-            {...mapConfig}
-          />
-        </Grid>
+    <Grid container spacing={4}>
+      <Grid item xs={12}>
+        <h3>react-romania</h3>
+        <p>
+          Responsive maps of Romania's administrative units. Made with React
+          Hooks, Material UI 4 and D3v5.
+        </p>
+        <br />
       </Grid>
-    </Container>
+      <Grid item md={6} xs={12}>
+        <MapOfRomania
+          {...mapConfig}
+          primaryMapData={mapData.primaryMapData}
+          secondaryMapData={
+            mapConfig.showSecondaryPaths ? mapData.secondaryMapData : undefined
+          }
+          pointMapData={mapData.pointMapData}
+          scale={mapConfig.scale.scale}
+          color={mapConfig.color[mapConfig.scale.colorType]}
+          tooltip={Tooltip}
+          legend={{ title: "Population" }}
+          classes={
+            mapConfig.showSecondaryPaths ? secondaryClasses : primaryClasses
+          }
+          onClick={onCountyClick}
+        />
+      </Grid>
+      <Grid item md={6} xs={12}>
+        <MapOfRomanianCounty
+          {...mapConfig}
+          minHeight={300}
+          minWidth={300}
+          countyId={mapData.selectedCounty || "CJ"}
+          primaryMapData={mapData.selectedCountyData}
+          // overwrite mapConfig
+          pointNames={[]}
+          showSecondaryPaths={false}
+          scale={mapConfig.scale.scale}
+          color={mapConfig.color[mapConfig.scale.colorType]}
+          tooltip={Tooltip}
+          legend={{ title: `${mapData.selectedCounty} County Population` }}
+          classes={primaryClasses}
+        />
+      </Grid>
+      <Grid item md={12} xs={12}>
+        <h3>Configuration</h3>
+        <MapConfiguration
+          handleCheckboxChange={handleCheckboxChange}
+          handleInputChange={handleInputChange}
+          {...mapConfig}
+        />
+      </Grid>
+    </Grid>
   );
 }

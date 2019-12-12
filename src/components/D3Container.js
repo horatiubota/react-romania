@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import ReactDOMServer from "react-dom/server";
-import { select, mouse } from "d3";
+import { select, mouse } from "d3-selection";
 
 import legend from "../utils/legend";
 

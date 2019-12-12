@@ -6,10 +6,10 @@ import Box from "@material-ui/core/Box";
 
 export default function App(props) {
   return (
-    <Container maxWidth="md" fixed>
-      <Box m={10}></Box>
+    <Container maxWidth="md">
+      <Box m={5}></Box>
       <Example />
-      <Box m={10}></Box>
+      <Box m={5}></Box>
     </Container>
   );
 }

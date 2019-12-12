@@ -1,4 +1,4 @@
-export default `{
+export default {
     "type": "FeatureCollection",
     "features": [
         {
@@ -6402,4 +6402,4 @@ export default `{
             }
         }
     ]
-}`
+}

@@ -9,9 +9,9 @@ import {
   schemePRGn,
   interpolateRdGy,
   schemeRdGy
-} from "d3";
+} from "d3-scale-chromatic";
 
-import { scaleSequentialQuantile, scaleQuantile } from "d3";
+import { scaleSequentialQuantile, scaleQuantile } from "d3-scale";
 
 const cityTypes = [
   "Municipiu reședință de județ",
