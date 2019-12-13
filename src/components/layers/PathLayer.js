@@ -3,7 +3,7 @@ import classnames from "classnames"
 
 function PathLayer(props) {
   return (
-    <g id={props.layerId} className={"polygonsGroup"}>
+    <g className={"polygonsGroup"}>
       {props.data.map((d, i) => (
         <path
           key={i}

@@ -29,6 +29,8 @@ const bindDataToSelection = (selection, data) => {
     .data(data, function(d) {
       return d ? d.id : this.id
     })
+    .exit()
+    .remove()
 }
 
 const updateFillOnSelection = (selection, color) => {
@@ -129,24 +131,24 @@ export default function D3Container(props) {
     color,
   ])
 
-  const polygons = useMemo(() => getPolygonSelection(mapSvg), [mapSvg])
-  const points = useMemo(() => getPointSelection(mapSvg), [mapSvg])
-
   useEffect(() => {
     if (mapSvg && primaryMapData && primaryMapData.length) {
+      const polygons = getPolygonSelection(mapSvg)
       bindDataToSelection(polygons, primaryMapData)
       updateFillOnSelection(polygons, mapColor)
+
       attachTooltipToSelection(mapSvg, polygons, tooltip)
       attachClickHandlerToSelection(polygons, onClick)
     }
-  }, [polygons, primaryMapData, scale, color])
+  }, [primaryMapData, scale, color])
 
   useEffect(() => {
     if (mapSvg && pointMapData && pointMapData.length) {
+      const points = getPointSelection(mapSvg)
       bindDataToSelection(points, pointMapData)
       attachTooltipToSelection(mapSvg, points, tooltip)
     }
-  }, [points, pointMapData])
+  }, [pointMapData])
 
   useEffect(() => {
     const legendColor = getColor(scale, color, primaryMapData)

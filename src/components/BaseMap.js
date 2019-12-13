@@ -29,7 +29,6 @@ function BaseMap(props) {
       <svg width={width} height={height * 1.25} style={style}>
         {primaryMapData !== undefined && (
           <PathLayer
-            layerId="primary"
             projector={projector}
             data={primaryGeoData.features}
             polygonClass={classes.primaryPolygon}

@@ -1,11 +1,14 @@
-import counties from "./romania.counties.topo"
-import atus from "./romania.atus.topo"
-import cities from "./romania.cities.topo"
+import countiesTopojson from "./romania.counties.topo"
+import atusTopojson from "./romania.atus.topo"
+import citiesTopojson from "./romania.cities.topo"
 
 import { feature } from "topojson-client"
 
-export default {
-  counties: feature(counties, counties.objects['romania.counties']),
-  atus: feature(atus, atus.objects['romania.atus.simple']),
-  cities: feature(cities, cities.objects['romania.cities'])
-}
+const counties = feature(
+  countiesTopojson,
+  countiesTopojson.objects["romania.counties"]
+)
+const atus = feature(atusTopojson, atusTopojson.objects["romania.atus.simple"])
+const cities = feature(citiesTopojson, citiesTopojson.objects["romania.cities"])
+
+export { counties, atus, cities }
