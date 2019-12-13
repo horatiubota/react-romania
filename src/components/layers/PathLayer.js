@@ -1,5 +1,5 @@
-import React from "react";
-import classnames from "classnames";
+import React from "react"
+import classnames from "classnames"
 
 function PathLayer(props) {
   return (
@@ -14,11 +14,11 @@ function PathLayer(props) {
         />
       ))}
     </g>
-  );
+  )
 }
 
 PathLayer.defaultProps = {
-  defaultPolygonFill: "lightgray"
-};
+  defaultPolygonFill: "lightgray",
+}
 
-export default PathLayer;
+export default PathLayer

@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 function DefaultTooltip(props) {
-  const style = { display: "inline-block", background: "white" };
+  const style = { display: "inline-block", background: "white" }
 
   return (
     <div style={style}>
@@ -12,7 +12,7 @@ function DefaultTooltip(props) {
         </tr>
       </table>
     </div>
-  );
+  )
 }
 
-export default DefaultTooltip;
+export default DefaultTooltip

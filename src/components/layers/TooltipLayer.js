@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 function TooltipLayer(props) {
-  const style = { pointerEvents: "none", overflow: "visible" };
+  const style = { pointerEvents: "none", overflow: "visible" }
 
   return (
     <g id="tooltipGroup">
@@ -9,7 +9,7 @@ function TooltipLayer(props) {
         <div id="tooltipDiv" className="tooltipDiv" />
       </foreignObject>
     </g>
-  );
+  )
 }
 
-export default TooltipLayer;
+export default TooltipLayer

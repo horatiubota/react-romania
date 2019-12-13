@@ -2,12 +2,12 @@
  Adapted from https://observablehq.com/@d3/color-legend
 */
 
-import { range, quantile } from "d3-array";
-import { select, mouse } from "d3-selection";
-import { format } from "d3-format";
-import { interpolateRound } from "d3-interpolate";
-import { scaleLinear } from "d3-scale";
-import { axisBottom } from "d3-axis";
+import { range, quantile } from "d3-array"
+import { select, mouse } from "d3-selection"
+import { format } from "d3-format"
+import { interpolateRound } from "d3-interpolate"
+import { scaleLinear } from "d3-scale"
+import { axisBottom } from "d3-axis"
 
 function legend({
   node,
@@ -25,10 +25,10 @@ function legend({
   tickValues,
   onMousemove,
   onMouseout,
-  onMouseclick
+  onMouseclick,
 } = {}) {
-  let x;
-  const svg = select(node).select("#legendGroup");
+  let x
+  const svg = select(node).select("#legendGroup")
 
   // Continuous
   if (color.interpolator) {
@@ -38,33 +38,33 @@ function legend({
         .interpolator(interpolateRound(marginLeft, width - marginRight)),
       {
         range() {
-          return [marginLeft, width - marginRight];
-        }
+          return [marginLeft, width - marginRight]
+        },
       }
-    );
+    )
 
     // scaleSequentialQuantile doesn’t implement ticks or tickFormat.
     if (!x.ticks) {
       if (tickValues === undefined) {
-        const n = Math.round(ticks + 1);
-        tickValues = range(n).map(i => quantile(color.domain(), i / (n - 1)));
+        const n = Math.round(ticks + 1)
+        tickValues = range(n).map(i => quantile(color.domain(), i / (n - 1)))
       }
       if (typeof tickFormat !== "function") {
-        tickFormat = format(tickFormat === undefined ? ",f" : tickFormat);
+        tickFormat = format(tickFormat === undefined ? ",f" : tickFormat)
       }
     } else {
-      tickValues = x.ticks();
+      tickValues = x.ticks()
     }
 
     // remove image before re-drawing
-    svg.select("image").remove();
+    svg.select("image").remove()
 
-    const imageWidth = width - marginLeft - marginRight;
-    const segmentWidth = 1 / (tickValues.length - 1);
+    const imageWidth = width - marginLeft - marginRight
+    const segmentWidth = 1 / (tickValues.length - 1)
     const getLegendSegmentIndex = ([cursorX, ,]) => {
-      const cursorPosition = (cursorX - marginLeft) / imageWidth;
-      return Math.floor(cursorPosition / segmentWidth);
-    };
+      const cursorPosition = (cursorX - marginLeft) / imageWidth
+      return Math.floor(cursorPosition / segmentWidth)
+    }
 
     svg
       .append("image")
@@ -78,11 +78,11 @@ function legend({
       // approximate based on image and segment width
       .on("mousemove", () => {
         if (typeof onMousemove === "function") {
-          const segmentIndex = getLegendSegmentIndex(mouse(node));
-          onMousemove(tickValues.slice(segmentIndex, segmentIndex + 2));
+          const segmentIndex = getLegendSegmentIndex(mouse(node))
+          onMousemove(tickValues.slice(segmentIndex, segmentIndex + 2))
         }
       })
-      .on("mouseout", () => typeof onMouseout === "function" && onMouseout());
+      .on("mouseout", () => typeof onMouseout === "function" && onMouseout())
   }
 
   // Discrete
@@ -91,23 +91,23 @@ function legend({
       ? color.thresholds() // scaleQuantize
       : color.quantiles
       ? color.quantiles() // scaleQuantile
-      : color.domain(); // scaleThreshold
+      : color.domain() // scaleThreshold
 
     const thresholdFormat =
       tickFormat === undefined
         ? d => d
         : typeof tickFormat === "string"
         ? format(tickFormat)
-        : tickFormat;
+        : tickFormat
 
     x = scaleLinear()
       .domain([-1, color.range().length - 1])
       .rangeRound([
         Math.round(marginLeft - 1),
-        Math.round(width - marginRight + 1)
-      ]);
+        Math.round(width - marginRight + 1),
+      ])
 
-    svg.select("#legendRects").remove();
+    svg.select("#legendRects").remove()
 
     svg
       .append("g")
@@ -126,14 +126,14 @@ function legend({
           typeof onMousemove === "function" &&
           onMousemove(color.invertExtent(d))
       )
-      .on("mouseout", () => typeof onMouseout === "function" && onMouseout());
+      .on("mouseout", () => typeof onMouseout === "function" && onMouseout())
 
-    tickValues = range(thresholds.length);
-    tickFormat = i => thresholdFormat(thresholds[i], i);
+    tickValues = range(thresholds.length)
+    tickFormat = i => thresholdFormat(thresholds[i], i)
   }
 
   // remove all axis symbols before re-drawing
-  svg.select("#legendSymbols").remove();
+  svg.select("#legendSymbols").remove()
 
   svg
     .append("g")
@@ -159,24 +159,24 @@ function legend({
         .attr("text-anchor", "start")
         .attr("font-weight", "bold")
         .text(title)
-    );
+    )
 
-  return svg.node();
+  return svg.node()
 }
 
 function ramp(color, n = 256) {
-  const canvas = document.createElement("canvas");
-  canvas.width = n;
-  canvas.height = 1;
+  const canvas = document.createElement("canvas")
+  canvas.width = n
+  canvas.height = 1
 
-  const context = canvas.getContext("2d");
+  const context = canvas.getContext("2d")
 
   for (let i = 0; i < n; ++i) {
-    context.fillStyle = color(i / (n - 1));
-    context.fillRect(i, 0, 1, 1);
+    context.fillStyle = color(i / (n - 1))
+    context.fillRect(i, 0, 1, 1)
   }
 
-  return canvas;
+  return canvas
 }
 
-export default legend;
+export default legend

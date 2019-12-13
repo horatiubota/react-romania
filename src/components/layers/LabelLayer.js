@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 function LabelLayer(props) {
   return (
@@ -19,7 +19,7 @@ function LabelLayer(props) {
         </text>
       ))}
     </g>
-  );
+  )
 }
 
-export default LabelLayer;
+export default LabelLayer
