@@ -10,7 +10,7 @@ function LabelLayer(props) {
           y={props.projector.centroid(d.geometry)[1] * 1.01}
         >
           <tspan className={props.classes.label}>
-            {props.labels
+            {props.labels && props.labels.length
               ? props.labels.indexOf(d.properties.defaultLabel) >= 0
                 ? d.properties.defaultLabel
                 : ""

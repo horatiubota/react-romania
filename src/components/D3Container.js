@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useMemo, useRef } from "react"
 import ReactDOMServer from "react-dom/server"
 import { select, mouse } from "d3-selection"
 
@@ -15,18 +15,8 @@ const getColor = (scale, color, data) => {
   )
 }
 
-const getPolygonSelection = (node, layer) => {
-  return select(node)
-    .select(`#${layer}`)
-    .selectAll(".polygonPath")
-}
-
-const getPrimaryPolygonSelection = node => {
-  return getPolygonSelection(node, "primary")
-}
-
-const getSecondaryPolygonSelection = node => {
-  return getPolygonSelection(node, "secondary")
+const getPolygonSelection = node => {
+  return select(node).selectAll(".polygonPath")
 }
 
 const getPointSelection = node => {
@@ -81,27 +71,21 @@ const attachTooltipToSelection = (node, selection, tooltip) => {
  Legend
 */
 
-const onLegendMousemove = (node, classes, bounds, showSecondaryPaths) => {
+const onLegendMousemove = (node, classes, bounds) => {
   const [lower, upper] = bounds
 
-  ;(showSecondaryPaths
-    ? getSecondaryPolygonSelection(node)
-    : getPrimaryPolygonSelection(node)
-  ).classed(
+  getPolygonSelection(node).classed(
     classes.highlightedPolygon,
     d => d.value >= lower && d.value <= upper
   )
 }
 
-const onLegendMouseout = (node, classes, showSecondaryPaths) => {
-  ;(showSecondaryPaths
-    ? getSecondaryPolygonSelection(node)
-    : getPrimaryPolygonSelection(node)
-  ).classed(classes.highlightedPolygon, false)
+const onLegendMouseout = (node, classes) => {
+  getPolygonSelection(node).classed(classes.highlightedPolygon, false)
 }
 
 const updateLegend = (node, color, props) => {
-  const { size, legend: legendProps, classes, showSecondaryPaths } = props
+  const { size, legend: legendProps, classes } = props
 
   legend({
     ...legendProps,
@@ -111,9 +95,8 @@ const updateLegend = (node, color, props) => {
     width: size.width,
     marginLeft: size.width * 0.05,
     marginRight: size.width * 0.05,
-    onMousemove: bounds =>
-      onLegendMousemove(node, classes, bounds, showSecondaryPaths),
-    onMouseout: () => onLegendMouseout(node, classes, showSecondaryPaths),
+    onMousemove: bounds => onLegendMousemove(node, classes, bounds),
+    onMouseout: () => onLegendMouseout(node, classes),
   })
 }
 
@@ -130,50 +113,48 @@ const attachClickHandlerToSelection = (selection, f) => {
 }
 
 export default function D3Container(props) {
+  const { primaryMapData, pointMapData } = props
+  const { size, scale, color, legend, tooltip, onClick } = props
+
   const ref = useRef()
-  const { primaryMapData, secondaryMapData, pointMapData } = props
-  const { size, scale, color, legend, tooltip } = props
+
+  const [mapSvg] = useMemo(() => (ref.current ? ref.current.children : []), [
+    ref,
+    ref.current,
+  ])
+
+  const mapColor = useMemo(() => getColor(scale, color, primaryMapData), [
+    primaryMapData,
+    scale,
+    color,
+  ])
+
+  const polygons = useMemo(() => getPolygonSelection(mapSvg), [mapSvg])
+  const points = useMemo(() => getPointSelection(mapSvg), [mapSvg])
 
   useEffect(() => {
-    const [mapSvg] = ref.current ? ref.current.children : []
+    if (mapSvg && primaryMapData && primaryMapData.length) {
+      bindDataToSelection(polygons, primaryMapData)
+      updateFillOnSelection(polygons, mapColor)
+      attachTooltipToSelection(mapSvg, polygons, tooltip)
+      attachClickHandlerToSelection(polygons, onClick)
+    }
+  }, [polygons, primaryMapData, scale, color])
+
+  useEffect(() => {
+    if (mapSvg && pointMapData && pointMapData.length) {
+      bindDataToSelection(points, pointMapData)
+      attachTooltipToSelection(mapSvg, points, tooltip)
+    }
+  }, [points, pointMapData])
+
+  useEffect(() => {
+    const legendColor = getColor(scale, color, primaryMapData)
 
     if (mapSvg && primaryMapData && primaryMapData.length) {
-      const primaryPolygons = getPrimaryPolygonSelection(mapSvg)
-      const primaryColor = getColor(scale, color, primaryMapData)
-
-      bindDataToSelection(primaryPolygons, primaryMapData)
-      updateFillOnSelection(primaryPolygons, primaryColor)
-      attachTooltipToSelection(mapSvg, primaryPolygons, props.tooltip)
-      attachClickHandlerToSelection(primaryPolygons, props.onClick)
-
-      // secondary paths
-      if (secondaryMapData && secondaryMapData.length) {
-        const secondaryPolygons = getSecondaryPolygonSelection(mapSvg)
-        const secondaryColor = getColor(scale, color, secondaryMapData)
-
-        bindDataToSelection(secondaryPolygons, secondaryMapData)
-        updateFillOnSelection(secondaryPolygons, secondaryColor)
-      }
-
-      // points
-      if (pointMapData && pointMapData.length) {
-        const points = getPointSelection(mapSvg)
-
-        bindDataToSelection(points, pointMapData)
-        attachTooltipToSelection(mapSvg, points, tooltip)
-      }
+      updateLegend(mapSvg, legendColor, props)
     }
-  }, [ref, primaryMapData, secondaryMapData, scale, color])
-
-  // force legend re-draw on size, scale or color change
-  useEffect(() => {
-    const [mapSvg] = ref.current ? ref.current.children : []
-    const legendColor = secondaryMapData
-      ? getColor(scale, color, secondaryMapData)
-      : getColor(scale, color, primaryMapData)
-
-    mapSvg && updateLegend(mapSvg, legendColor, props)
-  }, [ref, size, legend, scale, color])
+  }, [mapSvg, primaryMapData, legend, size, scale, color])
 
   return <div ref={ref}>{props.children}</div>
 }

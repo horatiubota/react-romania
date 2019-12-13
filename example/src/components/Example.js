@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
 
-import { MapOfRomania, MapOfRomanianCounty } from "react-romania";
-import MapConfiguration from "./MapConfiguration";
+import { MapOfRomania, MapOfRomanianCounty } from "react-romania"
+import MapConfiguration from "./MapConfiguration"
 
-import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-import { scales, colors } from "../utils/mapConfigOptions";
+import Grid from "@material-ui/core/Grid"
+import { makeStyles } from "@material-ui/core/styles"
+import { scales, colors } from "../utils/mapConfigOptions"
 
 const primaryStyles = {
   label: {
@@ -13,7 +13,7 @@ const primaryStyles = {
     fontSize: 10,
     fontFamily: "sans-serif",
     pointerEvents: "none",
-    background: "white"
+    background: "white",
   },
   primaryPolygon: {
     strokeWidth: 0.1,
@@ -26,8 +26,8 @@ const primaryStyles = {
       stroke: "black",
       strokeWidth: 0.5,
       strokeOpacity: 1,
-      fillOpacity: 1
-    }
+      fillOpacity: 1,
+    },
   },
   highlightedPolygon: {
     fill: "lightgray!important",
@@ -35,14 +35,14 @@ const primaryStyles = {
     stroke: "black",
     strokeOpacity: 1,
     strokeLinejoin: "round",
-    fillOpacity: 1
+    fillOpacity: 1,
   },
   point: {
     fill: "blue",
     stroke: "red",
     strokeWidth: 1,
     strokeLinecap: "round",
-    strokeOpacity: 0.75
+    strokeOpacity: 0.75,
     // pointerEvents: 'none'
   },
   pointLabel: {
@@ -52,19 +52,19 @@ const primaryStyles = {
     pointerEvents: "none",
     display: "inline-block",
     whiteSpace: "nowrap",
-    padding: 5
+    padding: 5,
   },
   paper: {
     padding: 5,
-    color: "black"
+    color: "black",
   },
   root: {
-    display: "flex"
+    display: "flex",
   },
   formControl: {
-    margin: 3
-  }
-};
+    margin: 3,
+  },
+}
 
 const secondaryStyles = Object.assign(
   { ...primaryStyles },
@@ -79,18 +79,18 @@ const secondaryStyles = Object.assign(
       strokeOpacity: 0.5,
       fillOpacity: 1,
       transition: "fill 1s ease",
-      pointerEvents: "none"
-    }
+      pointerEvents: "none",
+    },
   }
-);
+)
 
 function Tooltip(props, element) {
   const style = {
     display: "inline-block",
     background: "white",
     padding: "0 1em",
-    whiteSpace: "nowrap"
-  };
+    whiteSpace: "nowrap",
+  }
 
   return (
     <div style={style}>
@@ -99,27 +99,27 @@ function Tooltip(props, element) {
         <small>Populația în 2011: {props ? props.value : "N/A"}</small>
       </p>
     </div>
-  );
+  )
 }
 
 const getCountyData = (atuData, countyId) => {
   // deep copy of the filtered array
   return JSON.parse(
     JSON.stringify(atuData.filter(atu => atu.countyId === countyId))
-  );
-};
+  )
+}
 
 export default function Example(props) {
-  const primaryClasses = makeStyles(primaryStyles)();
-  const secondaryClasses = makeStyles(secondaryStyles)();
+  const primaryClasses = makeStyles(primaryStyles)()
+  const secondaryClasses = makeStyles(secondaryStyles)()
 
   const [mapData, setMapData] = useState({
     primaryMapData: [],
     secondaryMapData: [],
     pointMapData: [],
     selectedCountyData: [],
-    selectedCounty: ""
-  });
+    selectedCounty: "",
+  })
 
   const [mapConfig, setMapConfig] = useState({
     minHeight: 300,
@@ -132,33 +132,33 @@ export default function Example(props) {
     pointNames: ["Cluj-Napoca", "Lugoj", "Zimnicea", "București"],
     pointTypes: ["Municipiu reședință de județ"],
     scale: scales[0],
-    color: colors[0]
-  });
+    color: colors[0],
+  })
 
   const onCountyClick = d => {
-    const countyData = getCountyData(mapData.secondaryMapData, d.id);
+    const countyData = getCountyData(mapData.secondaryMapData, d.id)
 
     setMapData({
       ...mapData,
       selectedCountyData: countyData,
-      selectedCounty: d.id
-    });
-  };
+      selectedCounty: d.id,
+    })
+  }
 
   const handleCheckboxChange = property => event => {
-    setMapConfig({ ...mapConfig, [property]: !mapConfig[property] });
-  };
+    setMapConfig({ ...mapConfig, [property]: !mapConfig[property] })
+  }
 
   const handleInputChange = property => event => {
-    setMapConfig({ ...mapConfig, [property]: event.target.value });
-  };
+    setMapConfig({ ...mapConfig, [property]: event.target.value })
+  }
 
   useEffect(() => {
     const promises = [
       "data/county_population_data.json",
       "data/atu_population_data.json",
-      "data/city_population_data.json"
-    ].map(url => fetch(url).then(response => response.json()));
+      "data/city_population_data.json",
+    ].map(url => fetch(url).then(response => response.json()))
 
     Promise.all(promises).then(([countyData, atuData, cityData]) => {
       setMapData({
@@ -166,10 +166,10 @@ export default function Example(props) {
         secondaryMapData: atuData,
         pointMapData: cityData,
         selectedCountyData: getCountyData(atuData, "CJ"),
-        selectedCounty: "CJ"
-      });
-    });
-  }, []);
+        selectedCounty: "CJ",
+      })
+    })
+  }, [])
 
   return (
     <Grid container spacing={4}>
@@ -185,9 +185,6 @@ export default function Example(props) {
         <MapOfRomania
           {...mapConfig}
           primaryMapData={mapData.primaryMapData}
-          secondaryMapData={
-            mapConfig.showSecondaryPaths ? mapData.secondaryMapData : undefined
-          }
           pointMapData={mapData.pointMapData}
           scale={mapConfig.scale.scale}
           color={mapConfig.color[mapConfig.scale.colorType]}
@@ -225,5 +222,5 @@ export default function Example(props) {
         />
       </Grid>
     </Grid>
-  );
+  )
 }
