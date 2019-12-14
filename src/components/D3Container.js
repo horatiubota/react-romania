@@ -8,9 +8,9 @@ import legend from "../utils/legend"
  Polygons and Points
 */
 
-const getColor = (scale, color, data) => {
+const getColor = (scale, color, data, key) => {
   return scale(
-    data.map(item => item.value),
+    data.map(item => (key ? item.value[key] : item.value)),
     color
   )
 }
@@ -33,9 +33,9 @@ const bindDataToSelection = (selection, data) => {
     .remove()
 }
 
-const updateFillOnSelection = (selection, color) => {
+const updateFillOnSelection = (selection, color, key) => {
   selection.style("fill", d =>
-    d !== undefined ? color(d.value) : "transparent"
+    d !== undefined ? color(key ? d.value[key] : d.value) : "transparent"
   )
 }
 
@@ -116,31 +116,40 @@ const attachClickHandlerToSelection = (selection, f) => {
 
 export default function D3Container(props) {
   const { primaryMapData, pointMapData } = props
-  const { size, scale, color, legend, tooltip, onClick } = props
+  const { size, scale, color, tooltip, onClick } = props
+  const { primaryDataValueKey } = props
 
   const ref = useRef()
 
   const [mapSvg] = useMemo(() => (ref.current ? ref.current.children : []), [
-    ref,
     ref.current,
   ])
 
-  const mapColor = useMemo(() => getColor(scale, color, primaryMapData), [
-    primaryMapData,
-    scale,
-    color,
-  ])
+  const mapColor = useMemo(
+    () => getColor(scale, color, primaryMapData, primaryDataValueKey),
+    [primaryMapData, primaryDataValueKey, scale, color]
+  )
+
+  const isMounted = () => mapSvg && primaryMapData && primaryMapData.length
 
   useEffect(() => {
-    if (mapSvg && primaryMapData && primaryMapData.length) {
+    if (isMounted) {
       const polygons = getPolygonSelection(mapSvg)
       bindDataToSelection(polygons, primaryMapData)
-      updateFillOnSelection(polygons, mapColor)
-
       attachTooltipToSelection(mapSvg, polygons, tooltip)
       attachClickHandlerToSelection(polygons, onClick)
     }
-  }, [primaryMapData, scale, color])
+  }, [primaryMapData])
+
+  useEffect(() => {
+    if (isMounted) {
+      updateFillOnSelection(
+        getPolygonSelection(mapSvg),
+        mapColor,
+        primaryDataValueKey
+      )
+    }
+  }, [primaryDataValueKey, mapColor])
 
   useEffect(() => {
     if (mapSvg && pointMapData && pointMapData.length) {
@@ -151,12 +160,10 @@ export default function D3Container(props) {
   }, [pointMapData])
 
   useEffect(() => {
-    const legendColor = getColor(scale, color, primaryMapData)
-
-    if (mapSvg && primaryMapData && primaryMapData.length) {
-      updateLegend(mapSvg, legendColor, props)
+    if (isMounted) {
+      updateLegend(mapSvg, mapColor, props)
     }
-  }, [mapSvg, primaryMapData, legend, size, scale, color])
+  }, [mapSvg, primaryMapData, mapColor, size])
 
   return <div ref={ref}>{props.children}</div>
 }
