@@ -1,34 +1,34 @@
-import React from "react";
+import React from "react"
 
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
-import FormControl from "@material-ui/core/FormControl";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import TextField from "@material-ui/core/TextField";
-import Select from "@material-ui/core/Select";
-import Input from "@material-ui/core/Input";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid"
+import Box from "@material-ui/core/Box"
+import FormControl from "@material-ui/core/FormControl"
+import FormGroup from "@material-ui/core/FormGroup"
+import FormControlLabel from "@material-ui/core/FormControlLabel"
+import Checkbox from "@material-ui/core/Checkbox"
+import TextField from "@material-ui/core/TextField"
+import Select from "@material-ui/core/Select"
+import Input from "@material-ui/core/Input"
+import InputLabel from "@material-ui/core/InputLabel"
+import MenuItem from "@material-ui/core/MenuItem"
+import { makeStyles } from "@material-ui/core/styles"
 
 import {
   scales,
   colors,
   countyIds,
   cities,
-  cityTypes
-} from "../utils/mapConfigOptions";
+  cityTypes,
+} from "../utils/mapConfigOptions"
 
 const useStyles = makeStyles({
   formControl: {
-    marginTop: "1em"
-  }
-});
+    marginTop: "1em",
+  },
+})
 
 export default function MapConfiguration(props) {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <Grid container>
@@ -62,17 +62,7 @@ export default function MapConfiguration(props) {
               ))}
             </Select>
           </FormControl>
-          <FormControl className={classes.formControl}>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={props.showSecondaryPaths}
-                  onChange={props.handleCheckboxChange("showSecondaryPaths")}
-                />
-              }
-              label="showSecondaryPaths"
-            />
-          </FormControl>
+          <Box mt={2} />
           <FormControl>
             <FormControlLabel
               control={
@@ -211,5 +201,5 @@ export default function MapConfiguration(props) {
         </Grid>
       </Grid>
     </Grid>
-  );
+  )
 }

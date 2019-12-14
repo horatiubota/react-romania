@@ -66,24 +66,6 @@ const primaryStyles = {
   },
 }
 
-const secondaryStyles = Object.assign(
-  { ...primaryStyles },
-  {
-    primaryPolygon: Object.assign(
-      { ...primaryStyles.primaryPolygon },
-      { fillOpacity: 0 }
-    ),
-    secondaryPolygon: {
-      strokeWidth: 0.5,
-      stroke: "gray",
-      strokeOpacity: 0.5,
-      fillOpacity: 1,
-      transition: "fill 1s ease",
-      pointerEvents: "none",
-    },
-  }
-)
-
 function Tooltip(props, element) {
   const style = {
     display: "inline-block",
@@ -111,7 +93,6 @@ const getCountyData = (atuData, countyId) => {
 
 export default function Example(props) {
   const primaryClasses = makeStyles(primaryStyles)()
-  const secondaryClasses = makeStyles(secondaryStyles)()
 
   const [mapData, setMapData] = useState({
     primaryMapData: [],
@@ -127,7 +108,6 @@ export default function Example(props) {
     showLabels: true,
     showPoints: true,
     showPointLabels: true,
-    showSecondaryPaths: false,
     labels: ["AB", "BN"],
     pointNames: ["Cluj-Napoca", "Lugoj", "Zimnicea", "București"],
     pointTypes: ["Municipiu reședință de județ"],
@@ -185,14 +165,13 @@ export default function Example(props) {
         <MapOfRomania
           {...mapConfig}
           primaryMapData={mapData.primaryMapData}
+          primaryDataValueKey={null}
           pointMapData={mapData.pointMapData}
           scale={mapConfig.scale.scale}
           color={mapConfig.color[mapConfig.scale.colorType]}
           tooltip={Tooltip}
           legend={{ title: "Population" }}
-          classes={
-            mapConfig.showSecondaryPaths ? secondaryClasses : primaryClasses
-          }
+          classes={primaryClasses}
           onClick={onCountyClick}
         />
       </Grid>
@@ -205,7 +184,6 @@ export default function Example(props) {
           primaryMapData={mapData.selectedCountyData}
           // overwrite mapConfig
           pointNames={[]}
-          showSecondaryPaths={false}
           scale={mapConfig.scale.scale}
           color={mapConfig.color[mapConfig.scale.colorType]}
           tooltip={Tooltip}
