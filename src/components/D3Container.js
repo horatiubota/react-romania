@@ -43,7 +43,7 @@ const updateFillOnSelection = (selection, color, key) => {
  Tooltip
 */
 
-const updateTooltip = (node, tooltip) => {
+const updateTooltip = (node, tooltipHtml) => {
   const [cursorX, cursorY] = mouse(node)
 
   select(node)
@@ -51,7 +51,7 @@ const updateTooltip = (node, tooltip) => {
     .attr("x", cursorX + 10)
     .attr("y", cursorY + 10)
     .select("#tooltipDiv")
-    .html(ReactDOMServer.renderToString(tooltip))
+    .html(tooltipHtml)
 }
 
 const removeTooltip = node => {
@@ -60,11 +60,11 @@ const removeTooltip = node => {
     .html("")
 }
 
-const attachTooltipToSelection = (node, selection, tooltip) => {
+const attachTooltipToSelection = (node, selection, tooltip, key) => {
   // `this` is the element on which the mouse event is triggered
   // passed back to the tooltip function for customization options
   selection.on("mousemove", function(d) {
-    updateTooltip(node, tooltip(d, this))
+    updateTooltip(node, ReactDOMServer.renderToString(tooltip(d, key, this)))
   })
   select(node).on("mouseout", () => removeTooltip(node))
 }
@@ -136,7 +136,7 @@ export default function D3Container(props) {
     if (isMounted) {
       const polygons = getPolygonSelection(mapSvg)
       bindDataToSelection(polygons, primaryMapData)
-      attachTooltipToSelection(mapSvg, polygons, tooltip)
+      attachTooltipToSelection(mapSvg, polygons, tooltip, primaryDataValueKey)
       attachClickHandlerToSelection(polygons, onClick)
     }
   }, [primaryMapData])
@@ -155,7 +155,7 @@ export default function D3Container(props) {
     if (mapSvg && pointMapData && pointMapData.length) {
       const points = getPointSelection(mapSvg)
       bindDataToSelection(points, pointMapData)
-      attachTooltipToSelection(mapSvg, points, tooltip)
+      attachTooltipToSelection(mapSvg, points, tooltip, primaryDataValueKey)
     }
   }, [pointMapData])
 
