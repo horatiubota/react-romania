@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import ReactDOMServer from "react-dom/server"
 
 import { MapOfRomania, MapOfRomanianCounty } from "react-romania"
 import MapConfiguration from "./MapConfiguration"
@@ -66,19 +67,19 @@ const primaryStyles = {
   },
 }
 
-function Tooltip(props, element) {
+const generateTooltip = (data, element) => {
   const style = {
     display: "inline-block",
     background: "white",
-    padding: "0 1em",
+    padding: "0.25rem 1rem",
     whiteSpace: "nowrap",
   }
 
-  return (
+  return ReactDOMServer.renderToString(
     <div style={style}>
-      <p>{props ? `${props.label}` : "N/A"}</p>
+      <p>{data ? `${data.label}` : "N/A"}</p>
       <p>
-        <small>Populația în 2011: {props ? props.value : "N/A"}</small>
+        <small>Populația în 2011: {data ? data.value : "N/A"}</small>
       </p>
     </div>
   )
@@ -169,7 +170,7 @@ export default function Example(props) {
           pointMapData={mapData.pointMapData}
           scale={mapConfig.scale.scale}
           color={mapConfig.color[mapConfig.scale.colorType]}
-          tooltip={Tooltip}
+          tooltip={generateTooltip}
           legend={{ title: "Population" }}
           classes={primaryClasses}
           onClick={onCountyClick}
@@ -186,7 +187,7 @@ export default function Example(props) {
           pointNames={[]}
           scale={mapConfig.scale.scale}
           color={mapConfig.color[mapConfig.scale.colorType]}
-          tooltip={Tooltip}
+          tooltip={generateTooltip}
           legend={{ title: `${mapData.selectedCounty} County Population` }}
           classes={primaryClasses}
         />

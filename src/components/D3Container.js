@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useRef } from "react"
-import ReactDOMServer from "react-dom/server"
 import { select, mouse } from "d3-selection"
 
 import legend from "../utils/legend"
@@ -60,11 +59,11 @@ const removeTooltip = node => {
     .html("")
 }
 
-const attachTooltipToSelection = (node, selection, tooltip, key) => {
+const attachTooltipToSelection = (node, selection, tooltip) => {
   // `this` is the element on which the mouse event is triggered
   // passed back to the tooltip function for customization options
   selection.on("mousemove", function(d) {
-    updateTooltip(node, ReactDOMServer.renderToString(tooltip(d, key, this)))
+    updateTooltip(node, tooltip(d, this))
   })
   select(node).on("mouseout", () => removeTooltip(node))
 }
@@ -136,7 +135,7 @@ export default function D3Container(props) {
     if (isMounted) {
       const polygons = getPolygonSelection(mapSvg)
       bindDataToSelection(polygons, primaryMapData)
-      attachTooltipToSelection(mapSvg, polygons, tooltip, primaryDataValueKey)
+      attachTooltipToSelection(mapSvg, polygons, tooltip)
       attachClickHandlerToSelection(polygons, onClick)
     }
   }, [primaryMapData])
@@ -155,7 +154,7 @@ export default function D3Container(props) {
     if (mapSvg && pointMapData && pointMapData.length) {
       const points = getPointSelection(mapSvg)
       bindDataToSelection(points, pointMapData)
-      attachTooltipToSelection(mapSvg, points, tooltip, primaryDataValueKey)
+      attachTooltipToSelection(mapSvg, points, tooltip)
     }
   }, [pointMapData])
 
