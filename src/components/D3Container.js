@@ -9,7 +9,7 @@ import legend from "../utils/legend"
 
 const getColor = (scale, color, data, key) => {
   return scale(
-    data.map(item => (key ? item.value[key] : item.value)),
+    data.map(item => item.value[key] || item.value),
     color
   )
 }
@@ -34,7 +34,7 @@ const bindDataToSelection = (selection, data) => {
 
 const updateFillOnSelection = (selection, color, key) => {
   selection.style("fill", d =>
-    d !== undefined ? color(key ? d.value[key] : d.value) : "transparent"
+    d !== undefined ? color(d.value[key] || d.value) : "transparent"
   )
 }
 
@@ -42,7 +42,7 @@ const updateFillOnSelection = (selection, color, key) => {
  Tooltip
 */
 
-const updateTooltip = (node, tooltipHtml) => {
+const updateTooltip = (node, html) => {
   const [cursorX, cursorY] = mouse(node)
 
   select(node)
@@ -50,7 +50,7 @@ const updateTooltip = (node, tooltipHtml) => {
     .attr("x", cursorX + 10)
     .attr("y", cursorY + 10)
     .select("#tooltipDiv")
-    .html(tooltipHtml)
+    .html(html)
 }
 
 const removeTooltip = node => {
@@ -59,11 +59,11 @@ const removeTooltip = node => {
     .html("")
 }
 
-const attachTooltipToSelection = (node, selection, tooltip) => {
+const attachTooltipToSelection = (node, selection, tooltip, key) => {
   // `this` is the element on which the mouse event is triggered
   // passed back to the tooltip function for customization options
   selection.on("mousemove", function(d) {
-    updateTooltip(node, tooltip(d, this))
+    updateTooltip(node, tooltip(d, this, key))
   })
   select(node).on("mouseout", () => removeTooltip(node))
 }
@@ -72,12 +72,13 @@ const attachTooltipToSelection = (node, selection, tooltip) => {
  Legend
 */
 
-const onLegendMousemove = (node, classes, bounds) => {
+const onLegendMousemove = (node, classes, bounds, key) => {
   const [lower, upper] = bounds
 
   getPolygonSelection(node).classed(
     classes.highlightedPolygon,
-    d => d.value >= lower && d.value <= upper
+    d =>
+      (d.value[key] || d.value) >= lower && (d.value[key] || d.value) <= upper
   )
 }
 
@@ -86,7 +87,7 @@ const onLegendMouseout = (node, classes) => {
 }
 
 const updateLegend = (node, color, props) => {
-  const { size, legend: legendProps, classes } = props
+  const { size, legend: legendProps, classes, dataKey } = props
 
   legend({
     ...legendProps,
@@ -96,7 +97,7 @@ const updateLegend = (node, color, props) => {
     width: size.width,
     marginLeft: size.width * 0.05,
     marginRight: size.width * 0.05,
-    onMousemove: bounds => onLegendMousemove(node, classes, bounds),
+    onMousemove: bounds => onLegendMousemove(node, classes, bounds, dataKey),
     onMouseout: () => onLegendMouseout(node, classes),
   })
 }
@@ -114,9 +115,8 @@ const attachClickHandlerToSelection = (selection, f) => {
 }
 
 export default function D3Container(props) {
-  const { primaryMapData, pointMapData } = props
+  const { primaryMapData, pointMapData, dataKey } = props
   const { size, scale, color, tooltip, onClick } = props
-  const { primaryDataValueKey } = props
 
   const ref = useRef()
 
@@ -125,43 +125,42 @@ export default function D3Container(props) {
   ])
 
   const mapColor = useMemo(
-    () => getColor(scale, color, primaryMapData, primaryDataValueKey),
-    [primaryMapData, primaryDataValueKey, scale, color]
+    () => getColor(scale, color, primaryMapData, dataKey),
+    [primaryMapData, dataKey, scale, color]
   )
 
   const isMounted = () => mapSvg && primaryMapData && primaryMapData.length
 
   useEffect(() => {
-    if (isMounted) {
-      const polygons = getPolygonSelection(mapSvg)
-      bindDataToSelection(polygons, primaryMapData)
-      attachTooltipToSelection(mapSvg, polygons, tooltip)
-      attachClickHandlerToSelection(polygons, onClick)
-    }
+    isMounted &&
+      bindDataToSelection(getPolygonSelection(mapSvg), primaryMapData)
   }, [primaryMapData])
 
   useEffect(() => {
-    if (isMounted) {
-      updateFillOnSelection(
+    isMounted &&
+      updateFillOnSelection(getPolygonSelection(mapSvg), mapColor, dataKey)
+  }, [dataKey, mapColor])
+
+  useEffect(() => {
+    isMounted &&
+      attachTooltipToSelection(
+        mapSvg,
         getPolygonSelection(mapSvg),
-        mapColor,
-        primaryDataValueKey
+        tooltip,
+        dataKey
       )
-    }
-  }, [primaryDataValueKey, mapColor])
+  }, [primaryMapData, dataKey])
 
   useEffect(() => {
     if (mapSvg && pointMapData && pointMapData.length) {
       const points = getPointSelection(mapSvg)
       bindDataToSelection(points, pointMapData)
-      attachTooltipToSelection(mapSvg, points, tooltip)
+      attachTooltipToSelection(mapSvg, points, tooltip, dataKey)
     }
   }, [pointMapData])
 
   useEffect(() => {
-    if (isMounted) {
-      updateLegend(mapSvg, mapColor, props)
-    }
+    isMounted && updateLegend(mapSvg, mapColor, props)
   }, [mapSvg, primaryMapData, mapColor, size])
 
   return <div ref={ref}>{props.children}</div>
