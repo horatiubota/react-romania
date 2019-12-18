@@ -5,8 +5,11 @@ import { MapOfRomania, MapOfRomanianCounty } from "react-romania"
 import MapConfiguration from "./MapConfiguration"
 
 import Grid from "@material-ui/core/Grid"
+import Button from "@material-ui/core/Button"
 import { makeStyles } from "@material-ui/core/styles"
 import { scales, colors } from "../utils/mapConfigOptions"
+
+import dataSources from "../utils/dataSources"
 
 const primaryStyles = {
   label: {
@@ -67,7 +70,7 @@ const primaryStyles = {
   },
 }
 
-const generateTooltip = (data, element) => {
+const generateTooltip = (data, element, key) => {
   const style = {
     display: "inline-block",
     background: "white",
@@ -79,7 +82,7 @@ const generateTooltip = (data, element) => {
     <div style={style}>
       <p>{data ? `${data.label}` : "N/A"}</p>
       <p>
-        <small>Populația în 2011: {data ? data.value : "N/A"}</small>
+        <small>Populația: {data.value[key] || data.value}</small>
       </p>
     </div>
   )
@@ -101,6 +104,7 @@ export default function Example(props) {
     pointMapData: [],
     selectedCountyData: [],
     selectedCounty: "",
+    selectedYear: 1992,
   })
 
   const [mapConfig, setMapConfig] = useState({
@@ -136,9 +140,9 @@ export default function Example(props) {
 
   useEffect(() => {
     const promises = [
-      "data/county_population_data.json",
-      "data/atu_population_data.json",
-      "data/city_population_data.json",
+      dataSources.countyPopulationDataUrl,
+      dataSources.atuPopulationDataUrl,
+      dataSources.cityPopulationDataUrl,
     ].map(url => fetch(url).then(response => response.json()))
 
     Promise.all(promises).then(([countyData, atuData, cityData]) => {
@@ -148,6 +152,7 @@ export default function Example(props) {
         pointMapData: cityData,
         selectedCountyData: getCountyData(atuData, "CJ"),
         selectedCounty: "CJ",
+        selectedYear: 2019,
       })
     })
   }, [])
@@ -166,8 +171,8 @@ export default function Example(props) {
         <MapOfRomania
           {...mapConfig}
           primaryMapData={mapData.primaryMapData}
-          primaryDataValueKey={null}
           pointMapData={mapData.pointMapData}
+          dataKey={2019}
           scale={mapConfig.scale.scale}
           color={mapConfig.color[mapConfig.scale.colorType]}
           tooltip={generateTooltip}
