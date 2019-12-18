@@ -1,6 +1,13 @@
 {
-  "main.css": "static/css/main.1f738647.css",
-  "main.css.map": "static/css/main.1f738647.css.map",
-  "main.js": "static/js/main.40c3d702.js",
-  "main.js.map": "static/js/main.40c3d702.js.map"
+  "main.css": "/react-romania/static/css/main.fd13e40b.chunk.css",
+  "main.js": "/react-romania/static/js/main.12b7e75a.chunk.js",
+  "main.js.map": "/react-romania/static/js/main.12b7e75a.chunk.js.map",
+  "runtime~main.js": "/react-romania/static/js/runtime~main.921e3ef3.js",
+  "runtime~main.js.map": "/react-romania/static/js/runtime~main.921e3ef3.js.map",
+  "static/js/2.61fadb4c.chunk.js": "/react-romania/static/js/2.61fadb4c.chunk.js",
+  "static/js/2.61fadb4c.chunk.js.map": "/react-romania/static/js/2.61fadb4c.chunk.js.map",
+  "index.html": "/react-romania/index.html",
+  "precache-manifest.364bd6fc8900f3b8ca445d46316d5b25.js": "/react-romania/precache-manifest.364bd6fc8900f3b8ca445d46316d5b25.js",
+  "service-worker.js": "/react-romania/service-worker.js",
+  "static/css/main.fd13e40b.chunk.css.map": "/react-romania/static/css/main.fd13e40b.chunk.css.map"
 }
