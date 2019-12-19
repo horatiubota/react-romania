@@ -120,9 +120,9 @@ export default function D3Container(props) {
 
   const ref = useRef()
 
-  const [mapSvg] = useMemo(() => (ref.current ? ref.current.children : []), [
-    ref.current,
-  ])
+  const [mapSvg] = useMemo(
+    () => (ref.current ? ref.current.children : []), [ref.current]
+  )
 
   const mapColor = useMemo(
     () => getColor(scale, color, primaryMapData, dataKey),
@@ -132,8 +132,11 @@ export default function D3Container(props) {
   const isMounted = () => mapSvg && primaryMapData && primaryMapData.length
 
   useEffect(() => {
-    isMounted &&
-      bindDataToSelection(getPolygonSelection(mapSvg), primaryMapData)
+    const polygons = getPolygonSelection(mapSvg)
+    if (isMounted) {
+      bindDataToSelection(polygons, primaryMapData)
+      attachClickHandlerToSelection(polygons, onClick)
+    }
   }, [primaryMapData])
 
   useEffect(() => {
