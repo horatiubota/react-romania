@@ -103,7 +103,7 @@ export default function Example(props) {
     pointMapData: [],
     selectedCountyData: [],
     selectedCounty: "",
-    selectedYear: 1992,
+    selectedYear: 2019,
   })
 
   const [mapConfig, setMapConfig] = useState({
@@ -170,7 +170,6 @@ export default function Example(props) {
         <MapOfRomania
           {...mapConfig}
           primaryMapData={mapData.primaryMapData}
-          pointMapData={mapData.pointMapData}
           dataKey={2019}
           scale={mapConfig.scale.scale}
           color={mapConfig.color[mapConfig.scale.colorType]}

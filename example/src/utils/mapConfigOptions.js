@@ -8,16 +8,16 @@ import {
   interpolatePRGn,
   schemePRGn,
   interpolateRdGy,
-  schemeRdGy
-} from "d3-scale-chromatic";
+  schemeRdGy,
+} from "d3-scale-chromatic"
 
-import { scaleSequentialQuantile, scaleQuantile } from "d3-scale";
+import { scaleSequentialQuantile, scaleQuantile } from "d3-scale"
 
 const cityTypes = [
   "Municipiu reședință de județ",
   "Municipiu, altul decât reședința de județ",
-  "Oraș"
-];
+  "Oraș",
+]
 
 const countyIds = [
   "AB",
@@ -61,8 +61,8 @@ const countyIds = [
   "TR",
   "VL",
   "VN",
-  "VS"
-];
+  "VS",
+]
 
 const cities = [
   "Adjud",
@@ -180,24 +180,24 @@ const cities = [
   "Zlatna",
   "Însurăței",
   "Întorsura Buzăului",
-  "Șimleu Silvaniei"
-];
+  "Șimleu Silvaniei",
+]
 
 const colors = [
   { label: "Reds", interpolator: interpolateReds, scheme: schemeReds[9] },
   { label: "Blues", interpolator: interpolateBlues, scheme: schemeBlues[9] },
   { label: "BrBG", interpolator: interpolateBrBG, scheme: schemeBrBG[9] },
   { label: "PrGN", interpolator: interpolatePRGn, scheme: schemePRGn[9] },
-  { label: "RdGy", interpolator: interpolateRdGy, scheme: schemeRdGy[9] }
-];
+  { label: "RdGy", interpolator: interpolateRdGy, scheme: schemeRdGy[9] },
+]
 
 const scales = [
   { label: "Quantile", scale: scaleQuantile, colorType: "scheme" },
   {
     label: "Sequential Quantile",
     scale: scaleSequentialQuantile,
-    colorType: "interpolator"
-  }
-];
+    colorType: "interpolator",
+  },
+]
 
-export { scales, colors, countyIds, cities, cityTypes };
+export { scales, colors, countyIds, cities, cityTypes }
