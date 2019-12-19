@@ -183,10 +183,9 @@ export default function Example(props) {
       <Grid item md={6} xs={12}>
         <MapOfRomanianCounty
           {...mapConfig}
-          minHeight={300}
-          minWidth={300}
-          countyId={mapData.selectedCounty || "CJ"}
           primaryMapData={mapData.selectedCountyData}
+          dataKey={2019}
+          countyId={mapData.selectedCounty || "CJ"}
           // overwrite mapConfig
           pointNames={[]}
           scale={mapConfig.scale.scale}
