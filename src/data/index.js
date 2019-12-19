@@ -8,7 +8,7 @@ const counties = feature(
   countiesTopojson,
   countiesTopojson.objects["romania.counties"]
 )
-const atus = feature(atusTopojson, atusTopojson.objects["romania.atus.simple"])
+const atus = feature(atusTopojson, atusTopojson.objects["romania.atus"])
 const cities = feature(citiesTopojson, citiesTopojson.objects["romania.cities"])
 
 export { counties, atus, cities }
