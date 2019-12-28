@@ -45,17 +45,31 @@ const updateFillOnSelection = (selection, color, key) => {
 const updateTooltip = (node, html) => {
   const [cursorX, cursorY] = mouse(node)
 
-  select(node)
-    .select("#tooltipObject")
+  const tooltip = select(node).select("#tooltipObject")
+  const svg = select(node)
+
+  tooltip
     .attr("x", cursorX + 10)
     .attr("y", cursorY + 10)
     .select("#tooltipDiv")
     .html(html)
+
+  const { x: tooltipX } = tooltip.node().getBoundingClientRect()
+  const { x: svgX, width: svgWidth } = svg.node().getBoundingClientRect()
+
+  const tooltipWidth = tooltip.node().scrollWidth
+
+  if (tooltipX - svgX + tooltipWidth > svgWidth) {
+    tooltip.attr("x", cursorX - tooltipWidth)
+  }
+
+  tooltip.select("#tooltipDiv").style("opacity", 1)
 }
 
 const removeTooltip = node => {
   select(node)
     .select("#tooltipDiv")
+    .style("opacity", 0)
     .html("")
 }
 
@@ -120,9 +134,9 @@ export default function D3Container(props) {
 
   const ref = useRef()
 
-  const [mapSvg] = useMemo(
-    () => (ref.current ? ref.current.children : []), [ref.current]
-  )
+  const [mapSvg] = useMemo(() => (ref.current ? ref.current.children : []), [
+    ref.current,
+  ])
 
   const mapColor = useMemo(
     () => getColor(scale, color, primaryMapData, dataKey),
