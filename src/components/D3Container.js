@@ -57,7 +57,7 @@ const updateTooltip = (node, html) => {
   const { x: tooltipX } = tooltip.node().getBoundingClientRect()
   const { x: svgX, width: svgWidth } = svg.node().getBoundingClientRect()
 
-  const tooltipWidth = tooltip.node().scrollWidth
+  const tooltipWidth = tooltip.select("#tooltipDiv").node().scrollWidth
 
   if (tooltipX - svgX + tooltipWidth > svgWidth) {
     tooltip.attr("x", cursorX - tooltipWidth)
