@@ -46,7 +46,7 @@ const primaryStyles = {
     strokeWidth: 1,
     strokeLinecap: "round",
     strokeOpacity: 0.75,
-    // pointerEvents: 'none'
+    pointerEvents: "none",
   },
   pointLabel: {
     fontSize: 12,
