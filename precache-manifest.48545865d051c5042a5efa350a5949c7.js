@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "41bf10e41527216c6624",
+    "revision": "0aac18ccb59ed745fd9b",
     "url": "/react-romania/static/css/main.fd13e40b.chunk.css"
   },
   {
-    "revision": "41bf10e41527216c6624",
-    "url": "/react-romania/static/js/main.c6113d85.chunk.js"
+    "revision": "0aac18ccb59ed745fd9b",
+    "url": "/react-romania/static/js/main.fcd2070b.chunk.js"
   },
   {
     "revision": "f8a79e0b9a0a8bb6cbc1",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/react-romania/static/js/2.61fadb4c.chunk.js"
   },
   {
-    "revision": "15c8a368ef0537e49cc075bcb8aa6c82",
+    "revision": "54a399d41c0c40e2b744bfa90286f632",
     "url": "/react-romania/index.html"
   }
 ];
